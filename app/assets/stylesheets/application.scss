@@ -1,0 +1,207 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+ */
+
+@import "bootstrap";
+
+// COLOR SCHEME
+
+/* HSL */
+
+// $purple: hsla(297%, 100%, 11%, 1);
+// $turqoise: hsla(175%, 100%, 65%, 1);
+// $purple-light: hsla(290%, 29%, 68%, 1);
+// $blue: hsla(213%, 96%, 11%, 1);
+// $green: hsla(162%, 95%, 34%, 1);
+
+/* RGB */
+// $white: rgba(255, 255, 255, 1);
+// $purple: rgba(51, 0, 54, 1);
+// $turqoise: rgba(78, 255, 239, 1);
+// $purple-light: rgba(190, 151, 198, 1);
+// $blue: rgba(1, 25, 54, 1);
+// $green: rgba(4, 167, 119, 1);
+
+$white: rgba(255, 255, 255, 1);
+$purple: #483C6B;
+$turqoise: rgba(78, 255, 239, 1);
+$purple-light: rgba(190, 151, 198, 1);
+$blue: rgba(1, 25, 54, 1);
+$green: rgba(4, 167, 119, 1);
+
+
+
+.notice, .alert {
+    position: absolute;
+    color:red;
+}
+
+.logo {
+    display: block;
+    text-align: center;
+    margin-bottom:1em;
+    img{
+      border-radius:50%;
+    }
+}
+a.signup {
+    position: fixed;
+    bottom: 0;
+    background: $purple;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    color: #fff;
+    left: 0;
+    right: 0;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.home-visitors{
+  height:100vh;
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+}
+
+.intro-top{
+  height:60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.sticky-btm{
+  position: absolute;
+  left:0;
+  right:0;
+  bottom: 0;
+  width: 100%;
+  &.btn{
+    padding:20px;
+  }
+}
+.btn{
+  border-radius: 0px;
+}
+.btn-secondary{
+background: $purple;
+color:$turqoise;
+}
+.home-btn-nav{
+  display: flex;
+  flex-wrap: wrap;
+  height:40vh;
+  .btn{
+    width: 50%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    border: 1px solid $white;
+    justify-content: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+}
+.flex{
+  display: flex;
+}
+.event{
+  background: #5e4e8c;
+  color: $white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+  .time{
+    background:$purple;
+    color:#fff;
+    justify-content: center;
+    align-items: center;
+    .hour{
+      font-size:2.2em;
+    }
+    .minutes{
+      font-size: .7em;
+      margin-top: -1.5em;
+      margin-left: .3em;
+    }
+  }
+  .ev-body{
+    padding:1em;
+    .speaker{
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+  }
+  [class*='col-']{
+    &:last-child{
+      padding-right:0;
+    }
+  }
+  &.js-extended{
+    .time{
+      flex-direction: column;
+    }
+    .profile-img{
+      margin-bottom:10px;
+    }
+  }
+}
+.half-blocks{
+  display: flex;
+  flex-direction: column;
+  .half{
+    display: flex;
+    height:50%;
+    align-items: center;
+    justify-content: center;
+    &:first-child{
+      background:crimson;
+      color:#fff;
+    }
+    &:last-child{
+      background:$blue;
+      color:#fff;
+    }
+  }
+}
+
+
+.progress {
+    height: 40px;
+    margin-bottom: 0;
+    overflow: hidden;
+    background-color: #f5f5f5;
+    border-radius: 0;
+    -webkit-box-shadow: none
+}
+
+.progress-bar {
+    float: left;
+    width: 0;
+    height: 100%;
+    font-size: 15px;
+    line-height: 40px;
+    padding: 0 10px;
+    color: #fff;
+    text-align: center;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-transition: width .6s ease;
+    -o-transition: width .6s ease;
+    transition: width .6s ease;
+}
+.progress-bar-success {
+    background-color: #1EE7D5;
+}
