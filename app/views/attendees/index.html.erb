@@ -1,6 +1,6 @@
 <h2>This is the attendees page</h2>
 
 <%@attendees.each do |attendee|%>
-<%=link_to attendee.name, attendee_path %>
+<%=link_to attendee.name, attendee_path(attendee) %>
   <br>
 <%end%>

@@ -15,6 +15,8 @@
 
 //= require bootstrap
 //= require turbolinks
+//= require mo.min.js
+
 //= require_tree .
 
 $(function() {

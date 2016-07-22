@@ -3,7 +3,7 @@ class AttendeesController < ApplicationController
     @attendees = Attendee.all
   end
   def show
-    @attendee = Attendee.find(id: params[:id])
+    @attendee = Attendee.find_by(id: params[:id])
     render :show
   end
 end
