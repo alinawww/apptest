@@ -1,12 +1,21 @@
-<div class="home-visitors">
+
+<div class="home-visitors row">
+  <div id='stars'></div>
+  <div id='stars2'></div>
+  <div id='stars3'></div>
   <div class="intro-top">
-    <div class="logo"><img src="http://placehold.it/100x100" alt=""></div>
-    <p>Something nice here</p>
+    <div class="logo"><img src= <%= asset_path("logo.png")%> alt="..."></div>
+    <h2>Something nice here</h2>
   </div>
-  <div class="row home-btn-nav">
+  <div class="log-btns">
+    <%= link_to 'Log In', new_user_session_path, class:"btn"%>
+    <%= link_to 'Sign Up', new_user_registration_path, class:"btn"%>
+  </div>
+
+  <!-- <div class="row home-btn-nav">
     <%= link_to 'Agenda', agenda_index_path, class: "btn btn-secondary"%>
     <%= link_to 'Speakers', speakers_path, class: "btn btn-secondary"%>
     <%= link_to 'Projects', projects_path, class: "btn btn-secondary"%>
     <%= link_to 'Search everything', new_user_registration_path, class: "btn btn-secondary"%>
-  </div>
+  </div> -->
 </div>

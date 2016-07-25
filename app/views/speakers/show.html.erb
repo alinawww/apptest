@@ -1,7 +1,10 @@
 
 <div class="row intro">
   <div class="avatar">
-    <img src="http://placehold.it/100x100" alt="">
+    <%= image_tag @speaker.avatar.url %>
+    <!-- <%= form_for @speaker, url: speakers_path, html: { multipart: true } do |form| %>
+      <%= form.file_field :avatar %>
+    <% end %> -->
   </div>
   <h5 class="user-name">Hello <%= @speaker.name%></h5>
   <h6 class="title">Front-end developer</h6>
