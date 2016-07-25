@@ -1,40 +1,93 @@
-<div class="signup-page">
-  <h2>Sign up</h2>
+<div class="signup-page row">
+
+  <!-- <h2>Sign up</h2> -->
 
   <%= form_for(resource, as: resource_name, url: user_registration_path) do |f| %>
-    <%= devise_error_messages! %>
 
-    <div class="field">
-      <%= f.label :name %><br />
-      <%= f.text_field :name, autofocus: true %>
-    </div>
-    <div class="field">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true %>
-    </div>
-    <div class="field">
-      <%= f.label :type %><br />
-      <%= f.text_field :type, autofocus: true %>
-    </div>
 
-    <div class="field">
-      <%= f.label :password %>
-      <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em>
-      <% end %><br />
-      <%= f.password_field :password, autocomplete: "off" %>
+    <div class="first-step">
+      <div class="field">
+        <div class="half signup-speaker-btn">
+          <%= f.label :type, "Speaker", class:"form-label" %>
+          <%= f.radio_button 'type', 'Speaker', id:"speaker-btn"%>
+        </div>
+        <div class="half signup-attendee-btn">
+          <%= f.label :type, "Attendee", class:"form-label" %>
+          <%= f.radio_button 'type', 'Attendee', id:"attendee-btn"%>
+        </div>
+      </div>
     </div>
 
-    <div class="field">
-      <%= f.label :password_confirmation %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "off" %>
-    </div>
+    <div class="second-step hidden">
+      <!-- <h2>Hello dear <%= @type%></h2> -->
+      <%= devise_error_messages! %>
+      <div class="field">
+        <%= f.label :avatar, class:"form-label" %><br />
+        <%= f.file_field :avatar, autofocus: true %>
+      </div>
+      <div class="field">
+        <%= f.label :name, class:"form-label" %><br />
+        <%= f.text_field :name, autofocus: true %>
+      </div>
+      <div class="field">
+        <%= f.label :email, class:"form-label" %><br />
+        <%= f.email_field :email, autofocus: true %>
+      </div>
 
-    <div class="actions">
-      <%= f.submit "Sign up" %>
-    </div>
-  <% end %>
+      <div class="field">
+        <%= f.label :password, class:"form-label" %>
+        <% if @minimum_password_length %>
+        <!-- <em>(<%= @minimum_password_length %> characters minimum)</em> -->
+        <% end %><br />
+        <%= f.password_field :password, autocomplete: "off" %>
+      </div>
 
-  <%= render "devise/shared/links" %>
+      <div class="field">
+        <%= f.label :password_confirmation, class:"form-label" %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "off" %>
+      </div>
 
+      <div class="actions">
+        <%= f.submit "Sign up" %>
+      </div>
+    <% end %>
+  <!-- <%= render "devise/shared/links" %> -->
+  </div>
 </div>
+
+<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script>
+$('#speaker-btn').click(function() {
+   if($('#speaker-btn').is(':checked')) {
+     $('.second-step').removeClass('hidden')
+     $('.second-step').addClass('purple')
+     $('.first-step').addClass('hidden')
+    }
+});
+$('#attendee-btn').click(function() {
+   if($('#attendee-btn').is(':checked')) {
+     $('.second-step').removeClass('hidden')
+     $('.second-step').addClass('purple-light')
+     $('.first-step').addClass('hidden')
+    }
+});
+
+(function () {
+    var materialForm;
+    materialForm = function () {
+        return $('input').focus(function () {
+            return $(this).closest('.field').addClass('focused has-value');
+        }).focusout(function () {
+            return $(this).closest('.field').removeClass('focused');
+        }).blur(function () {
+            if (!this.value) {
+                $(this).closest('.field').removeClass('has-value');
+            }
+            return $(this).closest('.field').removeClass('focused');
+        });
+    };
+    $(function () {
+        return materialForm();
+    });
+}.call(this));
+</script>

@@ -1,7 +1,17 @@
+<% if @speaker.id == current_user.id %>
+  <script>
+    $('.button-msg').text('You have 1 message')
+    $('.contact .fa-envelope-o').addClass('full')
+  </script>
+<% else %>
+  <script>
+    $('.button-msg').text("Contact " + "<%= @speaker.name.capitalize%>")
+  </script>
+<% end %>
 
 <div class="row intro">
-  <div class="avatar">
-    <%= image_tag @speaker.avatar.url %>
+  <div class="avatar" style="background: url(<%= @speaker.avatar.url%>) center; background-size:cover">
+    <!-- <%= image_tag @speaker.avatar.url %> -->
     <!-- <%= form_for @speaker, url: speakers_path, html: { multipart: true } do |form| %>
       <%= form.file_field :avatar %>
     <% end %> -->
@@ -21,7 +31,7 @@
   </div>
 
   <button class="contact">
-    <i class="fa fa-envelope-o"></i>&nbsp;&nbsp;Check messages
+    <i class="fa fa-envelope-o"></i>&nbsp;&nbsp;<span class="button-msg"></span>
   </button>
 </div>
   <!-- <a href="#" id="username" data-type="text" data-pk="1" data-url="/post" data-title="Enter username">superuser</a> -->

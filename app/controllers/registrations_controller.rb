@@ -4,24 +4,22 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def create
-    type = params[:user][:type]
-    # byebug
+    @type = params[:user][:type]
     user = User.new(sign_up_params)
-    if type == "Speaker"
+    if @type == "Speaker"
       user.type = "Speaker"
     else
       user.type = "Attendee"
     end
     user.save
+    redirect_to '/welcome'
   end
-
   def update
     super
   end
-
   private
 
   def sign_up_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation, :type)
+    params.require(:user).permit(:avatar, :name, :email, :password, :password_confirmation, :type)
   end
 end
