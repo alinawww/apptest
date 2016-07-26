@@ -14,6 +14,8 @@
  */
 
 @import "bootstrap";
+@import "materialize";
+
 // @import "bootstrap-social";
 // COLOR SCHEME
 
@@ -40,7 +42,29 @@ $purple-light: rgba(190, 151, 198, 1);
 $blue: rgba(1, 25, 54, 1);
 $green: rgba(4, 167, 119, 1);
 $dark-grey: #666;
+$light-grey: #9e9e9e;
 $black: #101010;
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
+    margin-bottom: 0;
+}
+
+.btn{
+  background: $turqoise;
+  &.flat{
+    background:transparent;
+    box-shadow:none;
+    padding:0 .7em;
+  }
+}
+.btn-floating{
+  border-radius:50%!important;
+  i{
+    color:$purple;
+  }
+}
+
 
 body{
   color: $dark-grey;
@@ -314,7 +338,7 @@ background: linear-gradient(to left, #9D50BB , #6E48AA); /* W3C, IE 10+/ Edge, F
 
 .project-desc {
     // background: $turqoise;
-    padding-bottom: 15px;
+    // padding-bottom: 15px;
     margin-top: 20px;
     .screenshot {
     // background: lighten($purple, 60%);
@@ -353,8 +377,37 @@ background: linear-gradient(to left, #9D50BB , #6E48AA); /* W3C, IE 10+/ Edge, F
   height: 100px;
   width: 100px;
   overflow: hidden;
-  margin-bottom: 1em;
+  margin:0 auto 1em;
+  // margin-bottom: 1em;
   border-radius: 50%;
+}
+.upload_pic{
+  width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+.upload_pic, .upload_pic_label{
+  font-size: 1em;
+  font-weight: 200;
+  color: $light-grey;
+  background-color: transparent;
+  display: block;
+  padding: .5em;
+  letter-spacing: 2px;
+  margin: 0 auto;
+  width: 100px;
+  text-align: center;
+  border: 1px solid;
+  border-radius: 5px;
+}
+
+.upload_pic:focus, .upload_pic_label:focus,
+.upload_pic:hover, .upload_pic_label:hover {
+    background-color: $purple;
+    color:$white;
 }
 // form#edit_speaker_1 {
 //     position: absolute;
@@ -461,6 +514,7 @@ background: linear-gradient(to left, #9D50BB , #6E48AA); /* W3C, IE 10+/ Edge, F
       padding: 20px;
       font-size: 16px;
       color: white;
+      height:auto;
       text-transform: uppercase;
       letter-spacing: 2px;
       border-radius: 60px;
@@ -605,6 +659,11 @@ input, textarea {
     font-weight: 200;
     letter-spacing: 2px;
 }
+textarea{
+  height:auto;
+  border-bottom:1px solid;
+  font-size: 1rem;
+}
 input:focus, textarea:focus {
   box-shadow: none;
   background: none;
@@ -620,4 +679,32 @@ input[type="submit"] {
     margin-top: 1em;
     padding: 1.5em;
     border-radius: 2px;
+}
+
+.edit-hero{
+  // background:linear-gradient(25deg, $pupl, $purple )
+  background: $purple;
+  padding:1em;
+  margin-bottom:2em;
+}
+.input-group{
+  margin:1em 0;
+  &:focus{
+    .input-group-addon{
+      background:$turqoise;
+      color:$purple;
+    }
+  }
+}
+input[type=text].social-input {
+    margin: 0;
+    border-bottom: inherit;
+    border: 1px solid #cfcfcf;
+    border-radius: 0 4px 4px 0;
+    padding: 0 10px;
+    box-sizing: border-box;
+    &:focus:not([readonly]){
+      border-bottom: 1px solid #cfcfcf;
+      box-shadow: none;
+    }
 }

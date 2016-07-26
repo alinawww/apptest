@@ -1,15 +1,16 @@
 <div class="edit-hero row">
-  <h2>Edit <%= resource_name.to_s.humanize %></h2>
+  <!-- <h3>Edit <%= resource_name.to_s.humanize %></h3> -->
   <div class="avatar" style="background: url(<%= current_user.avatar.url%>) center; background-size:cover"></div>
-</div>
 
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
   <div class="field">
-    <%= f.label :avatar, class:"form-label" %><br />
-    <%= f.file_field :avatar, autofocus: true %>
+    <%= f.label :avatar, class:"upload_pic_label" %><br />
+    <%= f.file_field :avatar, class:"upload_pic"%>
   </div>
+</div>
+  <!-- <a class="waves-effect waves-light btn-large"><i class="material-icons left">cloud</i>button</a> -->
   <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name, autofocus: true %>
@@ -41,6 +42,26 @@
   <div class="field">
     <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
     <%= f.password_field :current_password, autocomplete: "off" %>
+  </div>
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-twitter"></i></span>
+    <%= f.text_field :twitter, autofocus: true, class:"social-input", placeholder: "@twitter" %>
+  </div>
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-linkedin"></i></span>
+    <%= f.text_field :linkedin, autofocus: true, class:"social-input", placeholder: "www.linkedin.com/example"%>
+  </div>
+  <div class="input-group">
+    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-github"></i></span>
+    <%= f.text_field :github, autofocus: true, class:"social-input", placeholder: "www.github.com/example" %>
+  </div>
+
+  <div>
+    <h3>Let the world know how awesome you are</h3>
+  </div>
+
+  <div class="field">
+    <%= f.text_area :summary, autofocus: true, rows:"5" %>
   </div>
 
   <div class="actions">

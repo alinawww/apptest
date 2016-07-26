@@ -3,7 +3,7 @@ class SpeakersController < ApplicationController
     @speakers = Speaker.all
   end
   def show
-    @speaker = Speaker.find_by(id: params[:id])
+    @speaker = User.find_by(id: params[:id])
     render :show
   end
   # def update

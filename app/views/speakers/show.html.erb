@@ -19,14 +19,14 @@
   <h5 class="user-name">Hello <%= @speaker.name%></h5>
   <h6 class="title">Front-end developer</h6>
   <div class="social">
-    <a class="btn btn-social-icon btn-twitter">
+    <a class="btn btn-social-icon btn-twitter flat" href="https://twitter.com/<%= @speaker.twitter%>" target="_blank">
       <span class="fa fa-twitter"></span>
     </a>
-    <a class="btn btn-social-icon btn-facebook">
-      <span class="fa fa-facebook"></span>
-    </a>
-    <a class="btn btn-social-icon btn-linkedin">
+    <a class="btn btn-social-icon btn-facebook flat">
       <span class="fa fa-linkedin"></span>
+    </a>
+    <a class="btn btn-social-icon btn-linkedin flat">
+      <span class="fa fa-github"></span>
     </a>
   </div>
 
@@ -38,7 +38,8 @@
 <div class="row summary">
   <div class="container">
     <h5>SUMMARY</h5>
-    <p>As a web designer with three years of experience in a growing international startup, I recently decided to dive head-first into the world of front end Web Development at IronHack. It’s been quite the adventure.</p>
+    <p><%= @speaker.summary%></p>
+    <a href="#" id="test" data-type="text" data-pk="1" data-url="/post" data-title="Enter username">superuser</a>
   </div>
 </div>
 <div class="row project-desc">
@@ -54,3 +55,8 @@
 <div class="sticky-btm">
 
 </div>
+<script>
+$(document).ready(function() {
+  $('#test').editable();
+});
+</script>

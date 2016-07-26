@@ -3,14 +3,17 @@
   <head>
     <title>TestingRails</title>
     <%= csrf_meta_tags %>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
     <link rel="stylesheet" href="http://www.jasny.net/bootstrap/dist/css/jasny-bootstrap.min.css"/>
     <link rel="stylesheet" href="http://www.jasny.net/bootstrap/examples/navmenu-reveal/navmenu-reveal.css">
-    <!-- <link href="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet"/> -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet"/>
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
   </head>
 
   <body>
@@ -36,8 +39,8 @@
           <span class="icon-bar"></span>
         </button>
         <button class="pull-right settings">
-          <%= link_to "edit", edit_user_registration_path, style:"color:#fff"%>
-        <!-- <i class="fa fa-cog"></i> -->
+          <!-- <%= link_to "edit", edit_user_registration_path, class:""%> -->
+          <a class="btn-large btn-floating waves-effect waves-light" href="<%= edit_user_registration_path%>"><i class="material-icons">edit</i></a>
         </button>
       </div>
     <div class="container-fluid">
@@ -52,8 +55,9 @@
     <script src="http://www.jasny.net/bootstrap/dist/js/jasny-bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js">
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <script src="http://cdn.jsdelivr.net/mojs/latest/mo.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.18/jquery.touchSwipe.js"></script>
-    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js"></script> -->
+    <!-- <script src="http://cdn.jsdelivr.net/mojs/latest/mo.min.js"></script> -->
+    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.18/jquery.touchSwipe.js"></script> -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
+
   </body>
 </html>
