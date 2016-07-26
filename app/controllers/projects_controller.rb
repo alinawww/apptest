@@ -3,22 +3,22 @@ class ProjectsController < ApplicationController
     @projects = Project.all
   end
   def new
-    @speaker = User.find_by_id(params[:speaker_id])
+    # byebug
+    @user = User.find_by_id(params[:user_id])
+    @project = @user.projects << Project.new
     @project = Project.new
-    @project.save
   end
   def create
-    @speaker = User.find_by_id(params[:speaker_id])
-    @project = Project.create(name:params[:project][:name], description:params[:project][:description], avatar:params[:project][:avatar], speaker_id:params[:speaker_id] )
-    byebug
+    @user = User.find_by_id(params[:user_id])
+    @project = Project.create(name:params[:project][:name], description:params[:project][:description], avatar:params[:project][:avatar], user_id:params[:speaker_id] )
+    # @project = Project.create(project_params)
     redirect_to speaker_path(current_user.id)
   end
 
-  # private
+  private
 
-  def project_params
-    byebug
-    params.require(:project).permit(:name, :description, :avatar)
-    # byebug
-  end
+  # def project_params
+  #   params.permit(:user_id, {:name, :description, :avatar})
+  #   byebug
+  # end
 end
