@@ -7,6 +7,7 @@ class User < ApplicationRecord
   scope :speakers, -> { where(type: 'Speaker') }
   scope :attendees, -> { where(type: 'Attendee') }
   self.inheritance_column = :type
+  has_many :projects
   def self.types
         %w(Speaker Attendee)
   end

@@ -11,10 +11,6 @@
 
 <div class="row intro">
   <div class="avatar" style="background: url(<%= @speaker.avatar.url%>) center; background-size:cover">
-    <!-- <%= image_tag @speaker.avatar.url %> -->
-    <!-- <%= form_for @speaker, url: speakers_path, html: { multipart: true } do |form| %>
-      <%= form.file_field :avatar %>
-    <% end %> -->
   </div>
   <h5 class="user-name">Hello <%= @speaker.name%></h5>
   <h6 class="title">Front-end developer</h6>
@@ -39,7 +35,6 @@
   <div class="container">
     <h5>SUMMARY</h5>
     <p><%= @speaker.summary%></p>
-    <a href="#" id="test" data-type="text" data-pk="1" data-url="/post" data-title="Enter username">superuser</a>
   </div>
 </div>
 <div class="row project-desc">
@@ -47,9 +42,13 @@
     <img src="https://source.unsplash.com/random/450x200" alt="">
   </div>
   <div class="body">
-    <h5>PROJECT: <span class="project-name">PROJECT NAME</span></h5>
+    <div class="text-center">
+      <h3>Add a new project</h3>
+      <a class="btn-large btn-floating waves-effect waves-light" href="<%= new_speaker_project_path(@speaker.id)%>"><i class="material-icons">add</i></a>
+    </div>
+    <!-- <h5>PROJECT: <span class="project-name">PROJECT NAME</span></h5>
     <p>As a web designer with three years of experience in a growing international startup, I recently decided to dive head-first into the world of front end Web Development at IronHack. It’s been quite the adventure.</p>
-    <div class="tags"><span class="label">RUBY</span><span class="label">HTML</span><span class="label">CSS</span><span class="label">JavaScript</span></div>
+    <div class="tags"><span class="label">RUBY</span><span class="label">HTML</span><span class="label">CSS</span><span class="label">JavaScript</span></div> -->
   </div>
 </div>
 <div class="sticky-btm">

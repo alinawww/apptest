@@ -4,6 +4,7 @@ class SpeakersController < ApplicationController
   end
   def show
     @speaker = User.find_by(id: params[:id])
+    @projects = @speaker.projects.all
     render :show
   end
   # def update
