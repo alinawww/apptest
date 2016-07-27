@@ -58,7 +58,13 @@
       <div class="body">
         <h5>PROJECT: <span class="project-name"><%= project.name%></span></h5>
         <p><%= project.description%></p>
-        <div class="tags"><span class="label"><%= project.tag_list%></span></div>
+        <div class="tags">
+          <%project.tag_list.each do |tag|%>
+          <span class="label">
+            <%= tag%>
+          </span>
+          <%end%>
+        </div>
         <!-- <div class="tags"><span class="label">RUBY</span><span class="label">HTML</span><span class="label">CSS</span><span class="label">JavaScript</span></div> -->
       </div>
       <%end%>

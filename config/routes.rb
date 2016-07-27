@@ -3,9 +3,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 
-  resources :speakers, controller: 'speakers', type:'Speaker', only: [:index, :show] do
-      resources :projects
-  end
+  resources :speakers, controller: 'speakers', type:'Speaker', only: [:index, :show]
 
   resources :attendees, controller: 'attendees', type:'Attendee', only: [:index, :show]
   resources :agenda, only: :index
