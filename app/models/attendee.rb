@@ -1,2 +1,3 @@
 class Attendee < User
+  
 end
