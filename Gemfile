@@ -8,6 +8,8 @@ gem 'materialize-sass'
 gem 'acts-as-taggable-on', :git => 'https://github.com/mbleigh/acts-as-taggable-on'
 gem "mailboxer", github: 'mailboxer/mailboxer'
 gem 'figaro'
+gem 'chosen-rails'
+gem 'jquery-turbolinks'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0'

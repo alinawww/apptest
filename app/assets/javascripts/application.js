@@ -15,9 +15,12 @@
 
 //= require materialize-sprockets
 
-
+//= require jquery.turbolinks
+//= require chosen-jquery
+//= require messages
 //= require bootstrap
 //= require turbolinks
+
 //= require mo.min.js
 
 //= require_tree .

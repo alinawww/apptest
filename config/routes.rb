@@ -10,9 +10,22 @@ Rails.application.routes.draw do
   resources :users do
       resources :projects
   end
-  resources :conversations, only: [:index, :show, :destroy]
+  resources :conversations, only: [:index, :show, :destroy] do
+    member do
+      post :reply
+    end
+    member do
+      post :restore
+    end
+    collection do
+      delete :empty_trash
+    end
+    member do
+      post :mark_as_read
+  end
+end
   resources :messages, only: [:new, :create]
-  
+
   get 'tags/:tag', to: 'projects#index', as: :tag
   root to: "home#index"
   get '/welcome' => "welcome#index", as: :user_root
