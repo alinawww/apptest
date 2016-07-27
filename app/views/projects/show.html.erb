@@ -1,0 +1,14 @@
+<h2>Updated project</h2>
+<hr>
+<div class="screenshot" style="background:url(<%= @project.avatar.url%>) center; background-size:cover; height:200px"></div>
+<h3><%= @project.name%></h3>
+<p><%= @project.description%></p>
+<div class="tags">
+  <%@project.tag_list.each do |tag|%>
+  <span class="label">
+    <%= link_to tag, tag_path(tag)%>
+  </span>
+  <%end%>
+</div>
+<br>
+<%= link_to "Back to my profile", current_user%>

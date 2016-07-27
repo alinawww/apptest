@@ -1,0 +1,18 @@
+<h1>create a new project</h1>
+
+<%= form_for [@user, @project], :url => user_project_path(@user.id, @project.id), :method => :PUT do |f| %>
+  <%= f.label :name %>:
+  <%= f.text_field :name %><br />
+
+  <%= f.label :description %>:
+  <%= f.text_area :description %><br />
+
+  <%= f.label :tag_list, "Tags (separated by commas)" %>:
+  <%= f.text_area :tag_list %><br />
+
+  <div class="field">
+    <%= f.label :avatar, class:"upload_pic_label" %><br />
+    <%= f.file_field :avatar, class:"upload_pic"%>
+  </div>
+  <%= f.submit %>
+<% end %>
