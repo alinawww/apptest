@@ -1,6 +1,6 @@
 <div class="edit-hero row">
   <!-- <h3>Edit <%= resource_name.to_s.humanize %></h3> -->
-  <div class="avatar" style="background: url(<%= current_user.avatar.url%>) center; background-size:cover"></div>
+  <div class="avatar" style="background: url(<%= current_user.avatar.url%>) center; background-size:cover", id="target"></div>
 
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
@@ -70,3 +70,26 @@
 <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
 <%= link_to "Back", :back %>
+
+
+<script>
+$(function() {
+$('.upload_pic').on('change', function(event) {
+  var files = event.target.files;
+  var image = files[0]
+  // here's the file size
+  console.log(image.size);
+  var reader = new FileReader();
+  reader.onload = function(file) {
+    var img = new Image();
+    console.log(file);
+    img.src = file.target.result;
+    // $('#target').html(img);
+    $('#target').attr("style", "background:url("+img.src+") center; background-size:cover");
+    // $('#target').attr("background", "http://placehold.it/200x200");
+  }
+  reader.readAsDataURL(image);
+  console.log(files);
+  });
+});
+</script>
