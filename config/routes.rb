@@ -11,7 +11,7 @@ Rails.application.routes.draw do
       resources :projects
   end
 
-
+  get 'tags/:tag', to: 'projects#index', as: :tag
   root to: "home#index"
   get '/welcome' => "welcome#index", as: :user_root
 end

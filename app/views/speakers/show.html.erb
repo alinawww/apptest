@@ -61,7 +61,8 @@
         <div class="tags">
           <%project.tag_list.each do |tag|%>
           <span class="label">
-            <%= tag%>
+            <%= link_to tag, tag_path(tag)%>
+            
           </span>
           <%end%>
         </div>

@@ -358,12 +358,22 @@ background: linear-gradient(to left, #9D50BB , #6E48AA); /* W3C, IE 10+/ Edge, F
     }
     .label{
       margin: 5px;
-      border: 1px solid;
-      border-radius: 50px;
-      padding: 10px 15px;
+      padding: 0;
       letter-spacing: 2px;
       font-weight: 200;
       display: inline-block;
+      a{
+        border: 1px solid;
+        color: $white;
+        padding: 10px 15px;
+        display: inline-block;
+        border-radius: 50px;
+        &:hover{
+          text-decoration: none;
+          background: $white;
+          color: $purple;
+        }
+      }
       &:first-child{
         margin-left:0;
       }
