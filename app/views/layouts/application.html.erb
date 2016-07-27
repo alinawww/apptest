@@ -25,7 +25,7 @@
         <li><%= link_to "My Profile", current_user%></li>
         <li><%= link_to "Agenda", agenda_index_path%></li>
         <li><%= link_to "Speakers", speakers_path%></li>
-        
+
         <li><a href="#">About</a></li>
         <li><a href="#">Contact</a></li>
         <li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
@@ -40,7 +40,7 @@
         </button>
         <button class="pull-right settings">
           <!-- <%= link_to "edit", edit_user_registration_path, class:""%> -->
-          <a class="btn-large btn-floating waves-effect waves-light" href="<%= edit_user_registration_path%>"><i class="material-icons">edit</i></a>
+          <a class="btn-large btn-floating waves-effect waves-light" href="<%= edit_user_registration_path(current_user.id)%>"><i class="material-icons">edit</i></a>
         </button>
       </div>
     <div class="container-fluid">

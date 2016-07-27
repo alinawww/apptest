@@ -4,7 +4,6 @@ Rails.application.routes.draw do
 
 
   resources :speakers, controller: 'speakers', type:'Speaker', only: [:index, :show]
-
   resources :attendees, controller: 'attendees', type:'Attendee', only: [:index, :show]
   resources :agenda, only: :index
   # resources :registrations

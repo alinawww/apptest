@@ -38,11 +38,6 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
-
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
-  </div>
   <div class="input-group">
     <span class="input-group-addon" id="basic-addon1"><i class="fa fa-twitter"></i></span>
     <%= f.text_field :twitter, autofocus: true, class:"social-input", placeholder: "@twitter" %>
@@ -63,7 +58,7 @@
   <div class="field">
     <%= f.text_area :summary, autofocus: true, rows:"5" %>
   </div>
-  
+
 
   <div class="actions">
     <%= f.submit "Update" %>
