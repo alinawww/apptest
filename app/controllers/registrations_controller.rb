@@ -5,15 +5,21 @@ class RegistrationsController < Devise::RegistrationsController
 
   def create
     @type = params[:user][:type]
-    user = User.new(sign_up_params)
+    @user = User.new(sign_up_params)
     if @type == "Speaker"
-      user.type = "Speaker"
+      @user.type = "Speaker"
     else
-      user.type = "Attendee"
+      @user.type = "Attendee"
     end
-    user.save
-    redirect_to '/welcome'
+    # @user.save
+    if @user.save
+      WelcomeMailer.welcome_email(@user).deliver_now
+      redirect_to '/welcome'
+    else
+      render :new
+    end
   end
+
   def update
     super
   end

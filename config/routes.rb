@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   end
   resources :conversations, only: [:index, :show, :destroy]
   resources :messages, only: [:new, :create]
+  
   get 'tags/:tag', to: 'projects#index', as: :tag
   root to: "home#index"
   get '/welcome' => "welcome#index", as: :user_root
