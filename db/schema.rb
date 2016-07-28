@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160727205609) do
+ActiveRecord::Schema.define(version: 20160728115502) do
 
   create_table "mailboxer_conversation_opt_outs", force: :cascade do |t|
     t.string  "unsubscriber_type"
@@ -74,6 +74,14 @@ ActiveRecord::Schema.define(version: 20160727205609) do
     t.datetime "avatar_updated_at"
     t.integer  "user_id"
     t.index ["user_id"], name: "index_projects_on_user_id"
+  end
+
+  create_table "ratings", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "project_id"
+    t.string   "value"
+    t.index ["project_id"], name: "index_ratings_on_project_id"
   end
 
   create_table "taggings", force: :cascade do |t|

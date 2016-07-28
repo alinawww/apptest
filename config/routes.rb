@@ -7,12 +7,19 @@ Rails.application.routes.draw do
   resources :attendees, controller: 'attendees', type:'Attendee', only: [:index, :show]
   resources :agenda, only: :index
   # resources :registrations
+  
   resources :users do
-      resources :projects
+      resources :projects do
+        resources :ratings
+      end
   end
+
   resources :conversations, only: [:index, :show, :destroy] do
     member do
       post :reply
+    end
+    member do
+      post :mark_as_read
     end
     member do
       post :restore
@@ -20,9 +27,7 @@ Rails.application.routes.draw do
     collection do
       delete :empty_trash
     end
-    member do
-      post :mark_as_read
-  end
+
 end
   resources :messages, only: [:new, :create]
 
