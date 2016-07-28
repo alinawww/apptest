@@ -11,11 +11,7 @@
   <%end%>
 </div>
 
-<p>Your rating is:
-  <% @ratings.each do |rating|%>
-    <%= rating = rating.value%>
-  <%end%>
-</p>
+<p>Your rating is: <%= @rating.average(:value)%></p>
 
 <%= form_for [@user, @project], url: user_project_ratings_path(@user.id, @project.id), method: "POST" do |f| %>
 
@@ -25,5 +21,5 @@
 
      <%= f.select( :ratings, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].collect{|u| [u]})-%>
    </div>
-   <%= f.submit "Create", class:"btn btn-red pull-right" %>
+   <%= f.submit "Rate", class:"btn" %>
  <% end %>

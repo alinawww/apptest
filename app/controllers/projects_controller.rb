@@ -15,7 +15,7 @@ class ProjectsController < ApplicationController
       # render 'error'
     end
   end
-  
+
   def edit
     @user = User.find_by_id(params[:user_id])
     @project = Project.find_by_id(params[:id])
@@ -36,8 +36,12 @@ class ProjectsController < ApplicationController
     @user = User.find_by_id(params[:user_id])
     @project = Project.find_by_id(params[:id])
     @rating = @project.ratings.new
-
     @ratings = @project.ratings.all
+    sum = 0
+    @ratings.each{|rating|
+      sum += rating.value
+    }
+    @average = sum / @ratings.length
   end
 
   # private
