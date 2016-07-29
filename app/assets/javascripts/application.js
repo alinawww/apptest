@@ -13,6 +13,7 @@
 
 //= require jquery
 //= require jquery_ujs
+//= require jquery.touchSwipe.min
 
 //= require jquery.turbolinks
 //= require chosen-jquery
@@ -38,4 +39,5 @@ $(function() {
       //Default is 75px, set to 0 for demo so any distance triggers swipe
        threshold:0
     });
+
   });

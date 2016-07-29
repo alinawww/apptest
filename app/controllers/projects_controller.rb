@@ -33,7 +33,7 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    @user = User.find_by_id(params[:user_id])
+  @user = User.find_by_id(params[:user_id])
     @project = Project.find_by_id(params[:id])
     @rating = @project.ratings.new
     @ratings = @project.ratings.all
