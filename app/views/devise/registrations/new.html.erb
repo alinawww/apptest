@@ -66,37 +66,5 @@
   </div>
 </div>
 
-<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script>
-$('#speaker-btn').click(function() {
-   if($('#speaker-btn').is(':checked')) {
-     $('.second-step').removeClass('hidden')
-     $('.first-step').addClass('hidden')
-    }
-});
-$('#attendee-btn').click(function() {
-   if($('#attendee-btn').is(':checked')) {
-     $('.second-step').removeClass('hidden')
-     $('.first-step').addClass('hidden')
-    }
-});
-
-(function () {
-    var materialForm;
-    materialForm = function () {
-        return $('input').focus(function () {
-            return $(this).closest('.field').addClass('focused has-value');
-        }).focusout(function () {
-            return $(this).closest('.field').removeClass('focused');
-        }).blur(function () {
-            if (!this.value) {
-                $(this).closest('.field').removeClass('has-value');
-            }
-            return $(this).closest('.field').removeClass('focused');
-        });
-    };
-    $(function () {
-        return materialForm();
-    });
-}.call(this));
 </script>
