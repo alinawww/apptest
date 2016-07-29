@@ -10,7 +10,7 @@ gem 'will_paginate'
 gem "paperclip", "~> 5.0.0"
 gem 'materialize-sass'
 gem 'acts-as-taggable-on', :git => 'https://github.com/mbleigh/acts-as-taggable-on'
-gem "mailboxer", github: 'mailboxer/mailboxer'
+# gem "mailboxer", github: 'mailboxer/mailboxer'
 gem 'figaro'
 
 gem 'chosen-rails'
