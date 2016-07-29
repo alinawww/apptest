@@ -37,11 +37,7 @@ class ProjectsController < ApplicationController
     @project = Project.find_by_id(params[:id])
     @rating = @project.ratings.new
     @ratings = @project.ratings.all
-    sum = 0
-    @ratings.each{|rating|
-      sum += rating.value
-    }
-    @average = sum / @ratings.length
+    @average = @project.ratings.average(:value)
   end
 
   # private

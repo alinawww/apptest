@@ -11,7 +11,7 @@
   <%end%>
 </div>
 
-<p>Your rating is: <%= @rating.average(:value)%></p>
+<p>Your rating is: <%= @average%></p>
 
 <%= form_for [@user, @project], url: user_project_ratings_path(@user.id, @project.id), method: "POST" do |f| %>
 

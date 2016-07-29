@@ -1,6 +1,10 @@
 source 'https://rubygems.org'
 gem 'devise'
-gem 'bootstrap', '~> 4.0.0.alpha3'
+
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'autoprefixer-rails'
+
+gem "font-awesome-rails"
 gem 'bootstrap-will_paginate'
 gem 'will_paginate'
 gem "paperclip", "~> 5.0.0"
@@ -8,6 +12,7 @@ gem 'materialize-sass'
 gem 'acts-as-taggable-on', :git => 'https://github.com/mbleigh/acts-as-taggable-on'
 gem "mailboxer", github: 'mailboxer/mailboxer'
 gem 'figaro'
+
 gem 'chosen-rails'
 gem 'jquery-turbolinks'
 

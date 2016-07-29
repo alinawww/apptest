@@ -8,49 +8,60 @@
     <div class="first-step">
       <div class="field">
         <div class="half signup-speaker-btn">
+          <i class="fa fa-microphone fa-2x white-text"></i>
+          <br>
           <%= f.label :type, "Speaker", class:"form-label" %>
           <%= f.radio_button 'type', 'Speaker', id:"speaker-btn"%>
         </div>
         <div class="half signup-attendee-btn">
-          <%= f.label :type, "Attendee", class:"form-label" %>
+          <i class="fa fa-user fa-2x white-text"></i>
+          <br>
+          <%= f.label :type, "Attendee", class:"form-label"%>
           <%= f.radio_button 'type', 'Attendee', id:"attendee-btn"%>
         </div>
       </div>
     </div>
-
     <div class="second-step hidden">
-      <!-- <h2>Hello dear <%= @type%></h2> -->
-      <%= devise_error_messages! %>
-      <div class="field">
-        <%= f.label :avatar, class:"form-label" %><br />
-        <%= f.file_field :avatar, autofocus: true %>
+      <div class="row flex hero signup-hero">
+        <i class="fa fa-rocket"></i>
       </div>
-      <div class="field">
-        <%= f.label :name, class:"form-label" %><br />
-        <%= f.text_field :name, autofocus: true %>
-      </div>
-      <div class="field">
-        <%= f.label :email, class:"form-label" %><br />
-        <%= f.email_field :email, autofocus: true %>
-      </div>
+      <div class="signup-form">
+        <!-- <h2>Hello dear <%= @type%></h2> -->
+        <%= devise_error_messages! %>
+        <div class="input-field">
+          <%= f.label :avatar, class:"form-label" %><br />
+          <%= f.file_field :avatar, autofocus: true %>
+        </div>
+        <div class="input-field">
+          <i class="material-icons prefix">account_circle</i>
+          <%= f.label :name, class:"form-label"%><br />
+          <%= f.text_field :name, autofocus: true %>
+        </div>
+        <div class="input-field">
+          <i class="material-icons prefix">email</i>
+          <%= f.label :email, class:"form-label" %><br />
+          <%= f.email_field :email, autofocus: true %>
+        </div>
 
-      <div class="field">
-        <%= f.label :password, class:"form-label" %>
-        <% if @minimum_password_length %>
-        <!-- <em>(<%= @minimum_password_length %> characters minimum)</em> -->
-        <% end %><br />
-        <%= f.password_field :password, autocomplete: "off" %>
-      </div>
+        <div class="input-field">
+          <i class="material-icons prefix">lock_outline</i>
+          <%= f.label :password, class:"form-label" %>
+          <% if @minimum_password_length %>
+          <!-- <em>(<%= @minimum_password_length %> characters minimum)</em> -->
+          <% end %><br />
+          <%= f.password_field :password, autocomplete: "off" %>
+        </div>
 
-      <div class="field">
-        <%= f.label :password_confirmation, class:"form-label" %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "off" %>
+        <div class="input-field">
+          <i class="material-icons prefix">lock</i>
+          <%= f.label :password_confirmation, class:"form-label" %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "off" %>
+        </div>
+        <div class="actions signup-btn">
+          <%= f.submit "Sign up" , class:"btn"%>
+        </div>
+      <% end %>
       </div>
-
-      <div class="actions">
-        <%= f.submit "Sign up" %>
-      </div>
-    <% end %>
   <!-- <%= render "devise/shared/links" %> -->
   </div>
 </div>
@@ -60,14 +71,12 @@
 $('#speaker-btn').click(function() {
    if($('#speaker-btn').is(':checked')) {
      $('.second-step').removeClass('hidden')
-     $('.second-step').addClass('purple')
      $('.first-step').addClass('hidden')
     }
 });
 $('#attendee-btn').click(function() {
    if($('#attendee-btn').is(':checked')) {
      $('.second-step').removeClass('hidden')
-     $('.second-step').addClass('purple-light')
      $('.first-step').addClass('hidden')
     }
 });

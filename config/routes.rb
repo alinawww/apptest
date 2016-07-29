@@ -7,13 +7,13 @@ Rails.application.routes.draw do
   resources :attendees, controller: 'attendees', type:'Attendee', only: [:index, :show]
   resources :agenda, only: :index
   # resources :registrations
-  
+
   resources :users do
       resources :projects do
         resources :ratings
       end
-  end
 
+  end
   resources :conversations, only: [:index, :show, :destroy] do
     member do
       post :reply
@@ -27,8 +27,11 @@ Rails.application.routes.draw do
     collection do
       delete :empty_trash
     end
+  end
+  get '/projects', to: 'projects#index'
 
-end
+
+
   resources :messages, only: [:new, :create]
 
   get 'tags/:tag', to: 'projects#index', as: :tag
