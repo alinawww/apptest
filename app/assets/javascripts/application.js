@@ -24,20 +24,54 @@
 //= require bootstrap-sprockets
 
 //= require_tree .
+$(document).ready(function(){
 
-$(function() {
-    //Enable swiping...
-    $(".js-extended").swipe( {
-      //Generic swipe handler for all directions
-      swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
-        // function goToURL() {
-        //   location.href = 'http://google.it';
-        //
-        // }
-        $(this).text("You swiped " + direction );
-      },
-      //Default is 75px, set to 0 for demo so any distance triggers swipe
-       threshold:0
-    });
-
+  //Enable swiping...
+  $(".js-extended").swipe( {
+    //Generic swipe handler for all directions
+    swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
+      // function goToURL() {
+      //   location.href = 'http://google.it';
+      //
+      // }
+      $(this).text("You swiped " + direction );
+    },
+    //Default is 75px, set to 0 for demo so any distance triggers swipe
+     threshold:0
   });
+
+  $(".button-collapse").sideNav();
+
+  var $alert = $('.alert');
+  if($alert.length > 0){
+    Materialize.toast($alert, 5000);
+  }
+
+  $('.signup-speaker-btn').click(function() {
+     if($('#speaker-btn').is(':checked')) {
+       $('.second-step').removeClass('hidden')
+       $('.first-step').addClass('hidden')
+      }
+  });
+  $('#attendee-btn').click(function() {
+     if($('#attendee-btn').is(':checked')) {
+       $('.second-step').removeClass('hidden')
+       $('.first-step').addClass('hidden')
+      }
+  });
+
+  // function materialForm() {
+  //     return $('input').focus(function () {
+  //         return $(this).closest('.field').addClass('focused has-value');
+  //     }).focusout(function () {
+  //         return $(this).closest('.field').removeClass('focused');
+  //     }).blur(function () {
+  //         if (!this.value) {
+  //             $(this).closest('.field').removeClass('has-value');
+  //         }
+  //         return $(this).closest('.field').removeClass('focused');
+  //     });
+  // };
+  // materialForm();
+
+});

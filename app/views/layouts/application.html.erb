@@ -33,19 +33,8 @@
     <%= yield %>
     </div>
     </div>
-    
+
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
-    <script>
-    $(document).ready(function(){
-       $(".button-collapse").sideNav();
-    });
-
-    var $alert = $('.alert');
-    if($alert.length > 0){
-      Materialize.toast($alert, 5000);
-    }
-    </script>
 
   </body>
 </html>
