@@ -11,8 +11,28 @@
 @import "active_admin/mixins";
 @import "active_admin/base";
 @import "active_admin_theme";
-@import "responsive_active_admin"
+@import "responsive_active_admin";
 
+form fieldset > ol > li.date_select fieldset ol li, form fieldset > ol > li.time_select fieldset ol li, form fieldset > ol > li.datetime_select fieldset ol li {
+    float: left;
+    width: 100%!important;
+    margin: 0 0.5em 0 0;
+}
+
+form fieldset > ol > li fieldset ol li select{
+  margin-top: 6px;
+  width: 100%;
+}
+
+form fieldset > ol > li fieldset:not(.has_many_fields) ol {
+    width: 20%;
+    @media(max-width:684px){
+      width: 80%;
+    }
+    @media(max-width:480px){
+      width:100%;
+    }
+}
 
 // Overriding any non-variable SASS must be done after the fact.
 // For example, to change the default status-tag color:

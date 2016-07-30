@@ -23,6 +23,11 @@ $skinTablePadding: 10px!default;
   border-radius: $amount;
 }
 
+a, a:link, a:visited {
+    color: $skinMainFirstColor;
+    text-decoration: none;
+}
+
 html {
   background: #f7f9fb;
 }
@@ -432,7 +437,7 @@ body.active_admin {
   }
 }
 form fieldset > ol > li fieldset.fragments ol {
-  margin-left: 20%;
+  // margin-left: 20%;
 }
 form fieldset ol > li.has_many_container h3 {
   color: #8494a8;
