@@ -1,0 +1,15 @@
+.side-nav li > a > i, .side-nav li > a > [class^="mdi-"], .side-nav li > a > [class*="mdi-"], .side-nav li > a > i.material-icons{
+  margin-right:15px;
+  color: $purple;
+  font-size: 1.2em;
+}
+
+.navbar{
+  padding: 1em;
+  left: auto;
+  .button-collapse{
+    i{
+      font-size: 3em;
+    }
+  }
+}

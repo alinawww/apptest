@@ -14,7 +14,7 @@ class RegistrationsController < Devise::RegistrationsController
     # @user.save
     if @user.save
       WelcomeMailer.welcome_email(@user).deliver_now
-      redirect_to '/welcome'
+      redirect_to root_path
     else
       render :new
     end

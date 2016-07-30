@@ -1,0 +1,15 @@
+.btn{
+  background: $turqoise;
+  &.flat{
+    background:transparent;
+    box-shadow:none;
+    padding:0 .7em;
+  }
+}
+
+.btn-floating{
+  border-radius:50%!important;
+  i{
+    color:$purple;
+  }
+}

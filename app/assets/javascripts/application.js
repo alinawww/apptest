@@ -13,7 +13,6 @@
 
 //= require jquery
 //= require jquery_ujs
-//= require jquery.touchSwipe.min
 
 //= require jquery.turbolinks
 //= require chosen-jquery
@@ -22,10 +21,11 @@
 //= require turbolinks
 //= require mo.min.js
 //= require bootstrap-sprockets
+//= require jquery.touchSwipe
 
 //= require_tree .
-$(document).ready(function(){
 
+$(document).ready(function(){
   //Enable swiping...
   $(".js-extended").swipe( {
     //Generic swipe handler for all directions
@@ -40,38 +40,64 @@ $(document).ready(function(){
      threshold:0
   });
 
-  $(".button-collapse").sideNav();
-
-  var $alert = $('.alert');
-  if($alert.length > 0){
-    Materialize.toast($alert, 5000);
-  }
-
+// Show signup form in two steps
   $('.signup-speaker-btn').click(function() {
      if($('#speaker-btn').is(':checked')) {
        $('.second-step').removeClass('hidden')
        $('.first-step').addClass('hidden')
       }
   });
-  $('#attendee-btn').click(function() {
+  $('.signup-attendee-btn').click(function() {
      if($('#attendee-btn').is(':checked')) {
        $('.second-step').removeClass('hidden')
        $('.first-step').addClass('hidden')
       }
   });
 
-  // function materialForm() {
-  //     return $('input').focus(function () {
-  //         return $(this).closest('.field').addClass('focused has-value');
-  //     }).focusout(function () {
-  //         return $(this).closest('.field').removeClass('focused');
-  //     }).blur(function () {
-  //         if (!this.value) {
-  //             $(this).closest('.field').removeClass('has-value');
-  //         }
-  //         return $(this).closest('.field').removeClass('focused');
-  //     });
-  // };
-  // materialForm();
+// style material form
+  var materialForm;
+  materialForm = function () {
+      return $('input').focus(function () {
+          return $(this).closest('.field').addClass('focused has-value');
+      }).focusout(function () {
+          return $(this).closest('.field').removeClass('focused');
+      }).blur(function () {
+          if (!this.value) {
+              $(this).closest('.field').removeClass('has-value');
+          }
+          return $(this).closest('.field').removeClass('focused');
+      });
+  };
+  $(function () {
+      return materialForm();
+  });
+
+  //call side nav
+  $(".button-collapse").sideNav();
+
+  //swipe alerts away
+  var $alert = $('.alert');
+  if($alert.length > 0){
+    Materialize.toast($alert, 5000);
+  }
+
+  //preview new avatar
+  $('.upload_pic').on('change', function(event) {
+    var files = event.target.files;
+    var image = files[0]
+    // here's the file size
+    console.log(image.size);
+    var reader = new FileReader();
+    reader.onload = function(file) {
+      var img = new Image();
+      console.log(file);
+      img.src = file.target.result;
+      // $('#target').html(img);
+      $('#target').attr("style", "background:url("+img.src+") center; background-size:cover");
+      // $('#target').attr("background", "http://placehold.it/200x200");
+    }
+    reader.readAsDataURL(image);
+    console.log(files);
+  });
 
 });

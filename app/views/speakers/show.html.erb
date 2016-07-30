@@ -3,16 +3,7 @@
 </div>
 
 
-<% if @speaker.id == current_user.id %>
-  <script>
-    $('.button-msg').text('You have 1 message')
-    $('.contact .fa-envelope-o').addClass('full')
-  </script>
-<% else %>
-  <script>
-    $('.button-msg').text("Contact " + "<%= @speaker.name.capitalize%>")
-  </script>
-<% end %>
+<!-- <%= render 'messagebtn' %> -->
 
 <div class="row intro">
   <div class="avatar" style="background: url(<%= @speaker.avatar.url%>) center; background-size:cover">
@@ -79,8 +70,3 @@
 <div class="sticky-btm">
 
 </div>
-<script>
-$(document).ready(function() {
-  $('#test').editable();
-});
-</script>
