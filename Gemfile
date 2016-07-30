@@ -13,6 +13,12 @@ gem 'acts-as-taggable-on', :git => 'https://github.com/mbleigh/acts-as-taggable-
 gem "mailboxer", github: 'mailboxer/mailboxer'
 gem 'figaro'
 
+#Needed files for the prerelease of Active admin for Rails5
+gem 'inherited_resources', github: 'activeadmin/inherited_resources'
+gem 'ransack',             github: 'activerecord-hackery/ransack'
+gem 'draper',              '> 3.x'
+gem 'activeadmin', '~> 1.0.0.pre4'
+
 gem 'chosen-rails'
 gem 'jquery-turbolinks'
 
