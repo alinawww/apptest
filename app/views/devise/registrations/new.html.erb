@@ -1,10 +1,5 @@
 <div class="signup-page row">
-
-  <!-- <h2>Sign up</h2> -->
-
   <%= form_for(resource, as: resource_name, url: user_registration_path) do |f| %>
-
-
     <div class="first-step">
       <div class="field">
         <div class="half signup-speaker-btn">
@@ -25,6 +20,7 @@
       <div class="row flex hero signup-hero">
         <i class="fa fa-rocket"></i>
       </div>
+      <%= render "devise/shared/links" %>
       <div class="signup-form">
         <!-- <h2>Hello dear <%= @type%></h2> -->
         <%= devise_error_messages! %>
@@ -62,6 +58,6 @@
         </div>
       <% end %>
       </div>
-  <!-- <%= render "devise/shared/links" %> -->
+
   </div>
 </div>

@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 gem 'devise'
+gem 'omniauth'
+gem 'omniauth-linkedin'
+gem 'omniauth-twitter'
 
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
