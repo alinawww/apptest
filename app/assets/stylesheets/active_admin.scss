@@ -34,6 +34,16 @@ form fieldset > ol > li fieldset:not(.has_many_fields) ol {
     }
 }
 
+#wrapper #header ul.tabs > li.current > a, #wrapper #header ul.tabs > li:hover > a, #wrapper #header ul.tabs > li > a{
+  display:block;
+}
+
+.sidebar_section select {
+    width: 100%;
+    padding: 10px;
+}
+
+
 // Overriding any non-variable SASS must be done after the fact.
 // For example, to change the default status-tag color:
 //
