@@ -23,6 +23,7 @@
 //= require bootstrap-sprockets
 //= require jquery.touchSwipe
 
+
 //= require_tree .
 
 $(document).ready(function(){
