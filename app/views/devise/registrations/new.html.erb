@@ -1,37 +1,10 @@
 <div class="signup-page row">
-
-  <!-- <h2>Sign up</h2> -->
-
   <%= form_for(resource, as: resource_name, url: user_registration_path) do |f| %>
-
-
-    <div class="first-step">
-      <div class="field">
-        <div class="half signup-speaker-btn">
-          <i class="fa fa-microphone fa-2x white-text"></i>
-          <br>
-          <%= f.label :type, "Speaker", class:"form-label" %>
-          <%= f.radio_button 'type', 'Speaker', id:"speaker-btn"%>
-        </div>
-        <div class="half signup-attendee-btn">
-          <i class="fa fa-user fa-2x white-text"></i>
-          <br>
-          <%= f.label :type, "Attendee", class:"form-label"%>
-          <%= f.radio_button 'type', 'Attendee', id:"attendee-btn"%>
-        </div>
-      </div>
-    </div>
-    <div class="second-step hidden">
       <div class="row flex hero signup-hero">
         <i class="fa fa-rocket"></i>
       </div>
       <div class="signup-form">
-        <!-- <h2>Hello dear <%= @type%></h2> -->
         <%= devise_error_messages! %>
-        <div class="input-field">
-          <%= f.label :avatar, class:"form-label" %><br />
-          <%= f.file_field :avatar, autofocus: true %>
-        </div>
         <div class="input-field">
           <i class="material-icons prefix">account_circle</i>
           <%= f.label :name, class:"form-label"%><br />
@@ -57,11 +30,12 @@
           <%= f.label :password_confirmation, class:"form-label" %><br />
           <%= f.password_field :password_confirmation, autocomplete: "off" %>
         </div>
+        <%= f.hidden_field :type, value: "Attendee" %>
         <div class="actions signup-btn">
           <%= f.submit "Sign up" , class:"btn"%>
         </div>
       <% end %>
       </div>
   <!-- <%= render "devise/shared/links" %> -->
-  </div>
+
 </div>
