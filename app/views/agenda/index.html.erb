@@ -19,13 +19,17 @@
         <%=link_to project.name, user_project_path(project.user.id, project.id)%>
       </h4>
       <p class="speaker"><%=link_to project.user.name, speaker_path(project.user.id)%></p>
+      <% if current_user %>
+        <%= link_to "favorite",   favorite_user_project_path(project.user.id, project.id, type: "favorite"), method: :put %>
+        <%= link_to "unfavorite", favorite_user_project_path(project.user.id, project.id, type: "unfavorite"), method: :put %>
+      <% end %>
     </div>
     <div class="col-xs-2 half-blocks">
       <div class="mark-favorite half">
-
-        <i class="fa fa-heart-o"></i>
+        <%= link_to favorite_user_project_path(project.user.id, project.id, type: "favorite"), method: :put do %><i class="fa fa-heart-o" aria-hidden="true"></i><% end %>
       </div>
       <div class="next half">
+        <a href="<%= %>"></a>
         <i class="fa fa-angle-right"></i>
       </div>
     </div>

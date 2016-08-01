@@ -40,6 +40,23 @@ class ProjectsController < ApplicationController
     @average = @project.ratings.average(:value)
   end
 
+  def favorite
+    @project = Project.find_by(id: params[:id])
+    type = params[:type]
+    if type == "favorite"
+      current_user.favorites << @project
+      # redirect_to :back, notice: 'You favorited #{@project.name}'
+
+    elsif type == "unfavorite"
+      current_user.favorites.delete(@project)
+      # redirect_to :back, notice: 'Unfavorited #{@project.name}'
+
+    else
+      # Type missing, nothing happens
+      # redirect_to :back, notice: 'Nothing happened.'
+    end
+  end
+
   # private
 
   # def project_params

@@ -8,6 +8,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   validates_format_of :email, :without => TEMP_EMAIL_REGEX, on: :update
   has_many :projects
+  has_many :favorite_projects
+  has_many :favorites, through: :favorite_projects, source: :project
 
   scope :speakers, -> { where(type: 'Speaker') }
   scope :attendees, -> { where(type: 'Attendee') }

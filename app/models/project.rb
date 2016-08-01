@@ -2,6 +2,8 @@ class Project < ApplicationRecord
   acts_as_taggable
   belongs_to :user
   has_many :ratings
+  has_many :favorite_projects
+  has_many :favorited_by, through: :favorite_projects, source: :user
   # validates :user_id, presence: true
   has_attached_file :avatar, styles: { medium: "300x300#", thumb: "100x100#" },
                     content_type: ['image/jpeg','image/jpg', 'image/png'],
