@@ -31,7 +31,9 @@ $dark-grey: #666;
 $light-grey: #9e9e9e;
 $black: #101010;
 
-
+.my-container{
+  padding:1em;
+}
 .row {
   margin-right: -15px;
   margin-left: -15px;
@@ -903,4 +905,17 @@ form#new_user {
     a{
       margin-bottom: -2em;
     }
+}
+
+.card{
+  border: 1px solid #ececec;
+  .btn{
+    &.btn-social-icon{
+      color:$purple;
+      font-size: 20px;
+    }
+  }
+  a{
+    color:$purple;
+  }
 }

@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   devise_for :admins
   devise_for :users, controllers: {registrations: 'registrations', omniauth_callbacks: 'omniauth_callbacks'} do
-      match '/users/:id/finish_signup' => 'registrations#finish_signup', via: [:get, :patch], :as => :finish_signup
+      # match '/users/:id/finish_signup' => 'registrations#finish_signup', via: [:get, :patch], :as => :finish_signup
   end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
