@@ -45,12 +45,11 @@ class ProjectsController < ApplicationController
     type = params[:type]
     if type == "favorite"
       current_user.favorites << @project
-      # redirect_to :back, notice: 'You favorited #{@project.name}'
+      redirect_to(:back)
 
     elsif type == "unfavorite"
       current_user.favorites.delete(@project)
-      redirect_to current_user_favorites_path(current_user.id)
-      # redirect_to :back, notice: 'Unfavorited #{@project.name}'
+      redirect_to(:back)
 
     else
       # Type missing, nothing happens
