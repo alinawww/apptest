@@ -93,4 +93,8 @@ $(document).ready(function(){
         $(".navbar").removeClass("stuck");
     }
   });
+  $( '.event' ).dblclick(function() {
+    $('.js-summary').toggleClass('hidden')
+  });
+
 });

@@ -43,5 +43,8 @@ Rails.application.routes.draw do
 
   get 'tags/:tag', to: 'projects#index', as: :tag
   root to: "home#index"
+  authenticated :user do
+   root 'welcome#index', as: :authenticated_root
+  end
   get '/welcome' => "welcome#index", as: :user_root
 end
