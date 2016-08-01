@@ -2,7 +2,7 @@ class User < ApplicationRecord
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
+  devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :projects
 
@@ -14,7 +14,7 @@ class User < ApplicationRecord
   def mailboxer_email(object)
     email
   end
-  
+
   def self.types
         %w(Speaker Attendee)
   end

@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 gem 'devise'
 
-gem 'bootstrap-sass', '~> 3.2.0'
+gem 'bootstrap-sass', '~> 3.3.6' #3.2.0 - old version
 gem 'autoprefixer-rails'
 
 gem "font-awesome-rails"
@@ -12,6 +12,14 @@ gem 'materialize-sass'
 gem 'acts-as-taggable-on', :git => 'https://github.com/mbleigh/acts-as-taggable-on'
 gem "mailboxer", github: 'mailboxer/mailboxer'
 gem 'figaro'
+
+#Needed files for the prerelease of Active admin for Rails5
+gem 'inherited_resources', github: 'activeadmin/inherited_resources'
+gem 'ransack',             github: 'activerecord-hackery/ransack'
+gem 'draper',              '> 3.x'
+gem 'activeadmin', '~> 1.0.0.pre4'
+gem 'active_admin_theme'
+gem 'responsive_active_admin'
 
 gem 'chosen-rails'
 gem 'jquery-turbolinks'

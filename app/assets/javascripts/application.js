@@ -23,6 +23,7 @@
 //= require bootstrap-sprockets
 //= require jquery.touchSwipe
 
+
 //= require_tree .
 
 $(document).ready(function(){
@@ -54,23 +55,6 @@ $(document).ready(function(){
       }
   });
 
-// style material form
-  var materialForm;
-  materialForm = function () {
-      return $('input').focus(function () {
-          return $(this).closest('.field').addClass('focused has-value');
-      }).focusout(function () {
-          return $(this).closest('.field').removeClass('focused');
-      }).blur(function () {
-          if (!this.value) {
-              $(this).closest('.field').removeClass('has-value');
-          }
-          return $(this).closest('.field').removeClass('focused');
-      });
-  };
-  $(function () {
-      return materialForm();
-  });
 
   //call side nav
   $(".button-collapse").sideNav();

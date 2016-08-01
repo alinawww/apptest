@@ -18,6 +18,9 @@
         <%if user_signed_in?%>
           <a href="#" data-activates="slide-out" class="button-collapse white-text pull-right"><i class="material-icons">menu</i></a>
           <%= render 'shared/navigation' %>
+        <%elsif admin_signed_in?%>
+          <a href="#" data-activates="slide-out" class="button-collapse white-text pull-right"><i class="material-icons">menu</i></a>
+          <%= render 'shared/navigation_admin' %>
         <%end%>
       </div>
       <div class="container-fluid">
@@ -31,6 +34,6 @@
     </div>
 
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    
+
   </body>
 </html>
