@@ -1,3 +1,22 @@
+<div class="row hero messages-hero flex">
+  <i class="fa fa-heart"></i>
+</div>
+
 <%@favorites.each do |favorite|%>
-  <%= favorite.name%>
+  <div class="row">
+    <div class="project-panel">
+      <div class="screenshot" style="background:url(<%= favorite.avatar.url%>) center; background-size:cover; height:200px"></div>
+      <div class="project-header">
+        <h3><%= favorite.name%></h3>
+      </div>
+      <div class="project-description">
+        <%= favorite.description%>
+      </div>
+      <div class="remove-fav">
+        <%= link_to favorite_user_project_path(favorite.user.id, favorite.id, type: "unfavorite"), class:"btn-large btn-floating waves-effect waves-light", method: :put do%>
+          <i class="material-icons">close</i>
+        <% end %>
+      </div>
+    </div>
+  </div>
 <%end%>

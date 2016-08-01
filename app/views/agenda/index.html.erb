@@ -1,40 +1,48 @@
 <!-- <h2>this is the agenda page</h2> -->
-
-<div class="row">
+<div class="row hero messages-hero flex">
+  <i class="fa fa-calendar"></i>
+</div>
+<!-- <div class="row">
   <div class="progress">
     <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40"
     aria-valuemin="0" aria-valuemax="100" style="width:40%">
       Dynamic text with jquery
     </div>
   </div>
+</div> -->
+<div class="events">
+  <%@projects.each do |project|%>
+    <div class="event flex js-extended">
+      <!-- <div class="col-xs-2 flex time">
+        <div class="profile-img">
+          <div class="avatar" style="background:url(<%= project.avatar.url%>) center; background-size:cover; height:200px"></div>
+        </div>
+      </div> -->
+      <div class="col-xs-10 ev-body">
+        <h4>
+      <%=link_to project.name, user_project_path(project.user.id, project.id)%>
+        </h4>
+        <p class="speaker"><%=link_to project.user.name, speaker_path(project.user.id)%></p>
+        <div class="js-summary hidden">
+          <p>
+            Here is the project symmary. Swipe right to go to the user profile. This block expands on tap.
+          </p>
+        </div>
+      </div>
+      <div class="col-xs-2 half-blocks">
+        <div class="mark-favorite half">
+          <%= link_to favorite_user_project_path(project.user.id, project.id, type: "favorite"), method: :put do %><i class="fa fa-heart-o" aria-hidden="true"></i><% end %>
+        </div>
+        <div class="next half">
+          <%=link_to speaker_path(project.user.id) do%>
+          <i class="fa fa-angle-right"></i>
+          <%end%>
+        </div>
+      </div>
+    </div>
+  <%end%>
+  
 </div>
-
-<%@projects.each do |project|%>
-  <div class="row event flex">
-    <div class="col-xs-2 flex time">
-      <span class="hour">15</span><span class="minutes">00</span>
-    </div>
-    <div class="col-xs-8 ev-body">
-      <h4>
-        <%=link_to project.name, user_project_path(project.user.id, project.id)%>
-      </h4>
-      <p class="speaker"><%=link_to project.user.name, speaker_path(project.user.id)%></p>
-      <% if current_user %>
-        <%= link_to "favorite",   favorite_user_project_path(project.user.id, project.id, type: "favorite"), method: :put %>
-        <%= link_to "unfavorite", favorite_user_project_path(project.user.id, project.id, type: "unfavorite"), method: :put %>
-      <% end %>
-    </div>
-    <div class="col-xs-2 half-blocks">
-      <div class="mark-favorite half">
-        <%= link_to favorite_user_project_path(project.user.id, project.id, type: "favorite"), method: :put do %><i class="fa fa-heart-o" aria-hidden="true"></i><% end %>
-      </div>
-      <div class="next half">
-        <a href="<%= %>"></a>
-        <i class="fa fa-angle-right"></i>
-      </div>
-    </div>
-  </div>
-<%end%>
 
 <!--
 

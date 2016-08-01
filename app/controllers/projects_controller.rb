@@ -49,6 +49,7 @@ class ProjectsController < ApplicationController
 
     elsif type == "unfavorite"
       current_user.favorites.delete(@project)
+      redirect_to current_user_favorites_path(current_user.id)
       # redirect_to :back, notice: 'Unfavorited #{@project.name}'
 
     else

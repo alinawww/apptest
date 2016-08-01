@@ -28,18 +28,18 @@
 
 $(document).ready(function(){
   //Enable swiping...
-  $(".js-extended").swipe( {
-    //Generic swipe handler for all directions
-    swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
-      // function goToURL() {
-      //   location.href = 'http://google.it';
-      //
-      // }
-      $(this).text("You swiped " + direction );
-    },
-    //Default is 75px, set to 0 for demo so any distance triggers swipe
-     threshold:0
-  });
+  // $(".js-extended").swipe( {
+  //   //Generic swipe handler for all directions
+  //   swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
+  //     // function goToURL() {
+  //     //   location.href = 'http://google.it';
+  //     //
+  //     // }
+  //     $(this).text("You swiped " + direction );
+  //   },
+  //   //Default is 75px, set to 0 for demo so any distance triggers swipe
+  //    threshold:0
+  // });
 
 // Show signup form in two steps
   $('.signup-speaker-btn').click(function() {
@@ -84,4 +84,13 @@ $(document).ready(function(){
     console.log(files);
   });
 
+  $(window).scroll(function() {
+    var scroll = $(window).scrollTop();
+
+    if (scroll >= 10) {
+        $(".navbar").addClass("stuck");
+    } else {
+        $(".navbar").removeClass("stuck");
+    }
+  });
 });
