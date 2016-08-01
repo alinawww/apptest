@@ -4,6 +4,7 @@ class RegistrationsController < Devise::RegistrationsController
     super
   end
 
+
   def create
     @type = params[:user][:type]
     @user = User.new(sign_up_params)

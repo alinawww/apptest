@@ -1,4 +1,5 @@
 <!-- <h2>this is the agenda page</h2> -->
+
 <div class="row">
   <div class="progress">
     <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40"
@@ -8,26 +9,31 @@
   </div>
 </div>
 
-<div class="row event flex">
-  <div class="col-xs-2 flex time">
-    <span class="hour">15</span><span class="minutes">00</span>
-  </div>
-  <div class="col-xs-8 ev-body">
-    <h4>
-      App name
-    </h4>
-    <p class="speaker">Speaker x</p>
-  </div>
-  <div class="col-xs-2 half-blocks">
-    <div class="mark-favorite half">
+<%@projects.each do |project|%>
+  <div class="row event flex">
+    <div class="col-xs-2 flex time">
+      <span class="hour">15</span><span class="minutes">00</span>
+    </div>
+    <div class="col-xs-8 ev-body">
+      <h4>
+        <%=link_to project.name, user_project_path(project.user.id, project.id)%>
+      </h4>
+      <p class="speaker"><%=link_to project.user.name, speaker_path(project.user.id)%></p>
+    </div>
+    <div class="col-xs-2 half-blocks">
+      <div class="mark-favorite half">
 
-      <i class="fa fa-heart-o"></i>
-    </div>
-    <div class="next half">
-      <i class="fa fa-angle-right"></i>
+        <i class="fa fa-heart-o"></i>
+      </div>
+      <div class="next half">
+        <i class="fa fa-angle-right"></i>
+      </div>
     </div>
   </div>
-</div>
+<%end%>
+
+<!--
+
 <div class="row event flex">
   <div class="col-xs-2 flex time">
     15:00
@@ -208,4 +214,4 @@
       <i class="fa fa-angle-right"></i>
     </div>
   </div>
-</div>
+</div> -->

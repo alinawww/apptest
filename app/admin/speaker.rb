@@ -19,6 +19,16 @@ ActiveAdmin.register Speaker do
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
 # end
+permit_params [:name, :email, :password, :password_confirmation]
 
+  form do |f|
+      f.inputs "Speaker" do
+        f.input :name
+        f.input :email
+        f.input :password
+        f.input :password_confirmation
+      end
+      f.actions
+    end
 
 end
