@@ -12,6 +12,7 @@ gem 'materialize-sass'
 gem 'acts-as-taggable-on', :git => 'https://github.com/mbleigh/acts-as-taggable-on'
 gem "mailboxer", github: 'mailboxer/mailboxer'
 gem 'figaro'
+gem 'taps', '~> 0.3.24'
 
 #Needed files for the prerelease of Active admin for Rails5
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
@@ -27,7 +28,8 @@ gem 'jquery-turbolinks'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3', '~> 1.3', '>= 1.3.11'
+# gem 'sqlite3', '~> 1.3', '>= 1.3.11'
+gem 'pg'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
