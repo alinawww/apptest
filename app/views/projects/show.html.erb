@@ -16,10 +16,9 @@
 <%= form_for [@user, @project], url: user_project_ratings_path(@user.id, @project.id), method: "POST" do |f| %>
 
    <div class="form-group">
-
      <%= f.label :ratings%> <small>What grade do you wanna give?</small>
+     <%= f.select( :ratings, (0..10).collect{|u| [u]})-%>
 
-     <%= f.select( :ratings, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].collect{|u| [u]})-%>
    </div>
    <%= f.submit "Rate", class:"btn" %>
  <% end %>

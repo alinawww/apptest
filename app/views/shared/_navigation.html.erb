@@ -15,10 +15,10 @@
       <a href="<%current_user%>"><span class="white-text name"><%= current_user.name.capitalize%></span></a>
       <a href="mailto:<%=current_user.email%>"><span class="white-text email"><%= current_user.email%></span></a>
     </div></li>
-    <li><%= link_to user_root_path, class:"waves-effect waves-purple" do %><i class="fa fa-home" aria-hidden="true"></i>Home <% end %></li>
-    <li><%= link_to current_user, class:"waves-effect waves-purple" do%><i class="fa fa-user" aria-hidden="true"></i>My profile<%end%></li>
-    <li><%= link_to current_user_favorites_path(current_user.id), class:"waves-effect waves-purple"  do%><i class="fa fa-heart" aria-hidden="true"></i>My favorites<%end%></li>
-    <li><%= link_to agenda_index_path, class:"waves-effect waves-purple" do%><i class="fa fa-calendar" aria-hidden="true"></i>Agenda<%end%></li>
-    <li><%= link_to speakers_path, class:"waves-effect waves-purple" do%><i class="fa fa-microphone" aria-hidden="true"></i>Speakers<%end%></li>
-    <li><%= link_to destroy_user_session_path, :method => :delete, class:"waves-effect waves-purple" do%><i class="fa fa-code" aria-hidden="true"></i>Sign Out<%end%></li>
+    <li><%= link_to user_root_path, class:"waves-effect waves-turquoise" do %><i class="fa fa-home" aria-hidden="true"></i>Home <% end %></li>
+    <li><%= link_to current_user, class:"waves-effect waves-turquoise" do%><i class="fa fa-user" aria-hidden="true"></i>My profile<%end%></li>
+    <li><%= link_to current_user_favorites_path(current_user.id), class:"waves-effect waves-turquoise"  do%><i class="fa fa-heart" aria-hidden="true"></i>My favorites<%end%></li>
+    <li><%= link_to agenda_index_path, class:"waves-effect waves-turquoise" do%><i class="fa fa-calendar" aria-hidden="true"></i>Agenda<%end%></li>
+    <li><%= link_to speakers_path, class:"waves-effect waves-turquoise" do%><i class="fa fa-microphone" aria-hidden="true"></i>Speakers<%end%></li>
+    <li><%= link_to destroy_user_session_path, :method => :delete, class:"waves-effect waves-turquoise" do%><i class="fa fa-code" aria-hidden="true"></i>Sign Out<%end%></li>
   </ul>

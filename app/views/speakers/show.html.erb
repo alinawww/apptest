@@ -9,7 +9,7 @@
   <div class="avatar" style="background: url(<%= @speaker.avatar.url%>) center; background-size:cover">
   </div>
   <h5 class="user-name">Hello <%= @speaker.name%></h5>
-  <h6 class="title">Front-end developer</h6>
+  <h6 class="title">Enthusiastic Iranhacker</h6>
   <div class="social">
     <a class="btn btn-social-icon btn-twitter flat" href="https://twitter.com/<%= @speaker.twitter%>" target="_blank">
       <span class="fa fa-twitter"></span>
@@ -51,7 +51,7 @@
 
       </div>
       <div class="body">
-        <h5><a class="small-icon" href="<%= edit_user_project_path(current_user.id, project.id)%>"><i class="material-icons">edit</i></a> PROJECT: <span class="project-name"><%= project.name%> </span></h5>
+        <h5><a class="small-icon" href="<%= edit_user_project_path(current_user.id, project.id)%>"><i class="fa fa-edit "></i></a> PROJECT: <span class="project-name"><%= project.name%> </span></h5>
         <p><%= project.description%></p>
         <div class="tags">
           <%project.tag_list.each do |tag|%>
