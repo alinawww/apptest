@@ -24,16 +24,7 @@
 @import "helpers";
 
 $purple: $mypurple;
-// @import "_navbar";
 
-html {
-   font-family: 'Roboto', sans-serif;
- }
-@media(max-width:684px){
-  html{
-    font-size:10px!important;
-  }
-}
 
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6{
   font-weight:300;
