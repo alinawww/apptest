@@ -22,24 +22,19 @@
 @import "chosen";
 @import "circle";
 @import "helpers";
+@import "partials/buttons";
+@import "partials/figures";
+@import "partials/forms";
+@import "partials/layout";
 
 $purple: $mypurple;
-// @import "_navbar";
 
-html {
-   font-family: 'Roboto', sans-serif;
- }
-@media(max-width:684px){
-  html{
-    font-size:10px!important;
-  }
-}
 
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6{
   font-weight:300;
 }
 .my-container{
-  padding:1em;
+  padding:2em;
 }
 .row {
   margin-right: -15px;
@@ -48,7 +43,7 @@ html {
 }
 
 .hero {
-    height: 10em;
+    height: 7em;
     justify-content: center;
     align-items: center;
     &.messages-hero{
@@ -81,7 +76,7 @@ html {
         top: 0;
         bottom: 0;
         width: 100%;
-        height: 140px;
+        height: 7em;
         content: '';
       }
     }
@@ -229,7 +224,7 @@ a.signup {
     letter-spacing: 2px;
 }
 
-.signup-btn{
+.log-btn{
   position: relative;
   .btn{
     position: fixed;
@@ -258,6 +253,14 @@ a.signup {
   flex-direction: column;
   background: radial-gradient(ellipse at bottom, #51427c 0%, #28213e 100%);
   overflow: hidden;
+}
+.home-congrats{
+  height:100vh;
+  display: flex;
+  flex-direction: column;
+  background: radial-gradient(ellipse at bottom, #51427c 0%, #28213e 100%);
+  overflow: hidden;
+  color:transparentize($white, .3);
 }
 
 .intro-top{
@@ -886,7 +889,6 @@ form#new_user {
     border-radius: 50%;
     float: left;
     border: 1px solid #e5e4e4;
-    margin: 2px;
     text-align: center;
 }
 .br-theme-bars-1to10 .br-widget a.br-active,
@@ -992,5 +994,18 @@ form#new_user {
   }
   .br-theme-bars-1to10 .br-widget .br-current-rating {
     color: black;
+  }
+}
+
+//error styling
+#error_explanation h2 {
+    font-size: 1.5rem;
+    color: $error-color;
+}
+
+.devse-shared-links{
+  padding:2em 0;
+  a{
+  margin-bottom:2em;
   }
 }

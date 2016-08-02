@@ -1,72 +1,75 @@
-<div class="edit-hero row">
-  <!-- <h3>Edit <%= resource_name.to_s.humanize %></h3> -->
+<div class="row flex hero signup-hero">
+  <i class="fa fa-user"></i>
+</div>
+
+<div class="my-container">
   <div class="avatar" style="background: url(<%= current_user.avatar.url%>) center; background-size:cover", id="target"></div>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <%= devise_error_messages! %>
+    <div class="field">
+      <%= f.label :avatar, class:"upload_pic_label" %><br />
+      <%= f.file_field :avatar, class:"upload_pic"%>
+    </div>
+    <!-- <a class="waves-effect waves-light btn-large"><i class="material-icons left">cloud</i>button</a> -->
+    <div class="field">
+      <%= f.label :name %><br />
+      <%= f.text_field :name, autofocus: true %>
+    </div>
 
+    <div class="field">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true %>
+    </div>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
-  <div class="field">
-    <%= f.label :avatar, class:"upload_pic_label" %><br />
-    <%= f.file_field :avatar, class:"upload_pic"%>
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :new_password, placeholder: "leave blank if you don't want to change it" %><br />
+      <%= f.password_field :password, autocomplete: "off" %>
+      <% if @minimum_password_length %>
+        <br />
+        <em><%= @minimum_password_length %> characters minimum</em>
+      <% end %>
+    </div>
+
+    <div class="field">
+      <%= f.label :new_password_confirmation %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    </div>
+    <div class="social-edit">
+      <div class="input-group">
+        <span class="input-group-addon" id="basic-addon1"><i class="fa fa-twitter"></i></span>
+        <%= f.text_field :twitter, autofocus: true, class:"social-input", placeholder: "@twitter" %>
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon" id="basic-addon1"><i class="fa fa-linkedin"></i></span>
+        <%= f.text_field :linkedin, autofocus: true, class:"social-input", placeholder: "www.linkedin.com/example"%>
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon" id="basic-addon1"><i class="fa fa-github"></i></span>
+        <%= f.text_field :github, autofocus: true, class:"social-input", placeholder: "www.github.com/example" %>
+      </div>
+    </div>
+</div>
+
+<div class="row description-edit">
+  <div class="col-xs-12">
+    <div class="my-container">
+      <h4>Let the world know how awesome you are</h4>
+      <div class="field">
+        <%= f.text_area :summary, rows:"5" %>
+      </div>
+    </div>
   </div>
 </div>
-  <!-- <a class="waves-effect waves-light btn-large"><i class="material-icons left">cloud</i>button</a> -->
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true %>
-  </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+<div class="my-container">
+  <div class="actions-edit">
+      <%= f.submit "Update", class: "btn btn-large" %>
   <% end %>
-
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
-    <% end %>
+  <%= link_to "Go back", :back, class:"btn btn-large button-disabled-color" %>
+  <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, class:"btn-danger btn btn-large", method: :delete %>
   </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-  <div class="input-group">
-    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-twitter"></i></span>
-    <%= f.text_field :twitter, autofocus: true, class:"social-input", placeholder: "@twitter" %>
-  </div>
-  <div class="input-group">
-    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-linkedin"></i></span>
-    <%= f.text_field :linkedin, autofocus: true, class:"social-input", placeholder: "www.linkedin.com/example"%>
-  </div>
-  <div class="input-group">
-    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-github"></i></span>
-    <%= f.text_field :github, autofocus: true, class:"social-input", placeholder: "www.github.com/example" %>
-  </div>
-
-  <div>
-    <h3>Let the world know how awesome you are</h3>
-  </div>
-
-  <div class="field">
-    <%= f.text_area :summary, autofocus: true, rows:"5" %>
-  </div>
-
-
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+</div>

@@ -1,5 +1,9 @@
 .btn{
   background: $turqoise;
+  color: $mypurple!important;
+  &.btn-social-icon{
+    color: $white!important;
+  }
   &.flat{
     background:transparent;
     box-shadow:none;
@@ -10,6 +14,6 @@
 .btn-floating{
   border-radius:50%!important;
   i{
-    color:$purple;
+    color:$mypurple;
   }
 }

@@ -8,6 +8,12 @@
   height: 10em;
   justify-content: center;
   align-items: center;
-  background: $purple;
+  background: $mypurple;
   color: $white;
+}
+
+.title-area {
+    padding: 1em;
+    background: $turqoise;
+    color: $mypurple;
 }
