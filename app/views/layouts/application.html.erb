@@ -15,13 +15,16 @@
 
   <body>
     <div class="canvas">
-      <div class="navbar navbar-fixed-top" style="">
-        <%if user_signed_in?%>
+      <%if user_signed_in?%>
+        <div class="navbar navbar-fixed-top" style="">
           <a href="#" data-activates="slide-out" class="button-collapse white-text pull-right"><i class="material-icons">menu</i></a>
           <%= render 'shared/navigation' %>
-        <%elsif admin_signed_in?%>
+        </div>
+      <%elsif admin_signed_in?%>
+        <div class="navbar navbar-fixed-top" style="">
           <a href="#" data-activates="slide-out" class="button-collapse white-text pull-right"><i class="material-icons">menu</i></a>
           <%= render 'shared/navigation_admin' %>
+        </div>
         <%end%>
       </div>
       <div class="container-fluid">
