@@ -22,6 +22,10 @@
 @import "chosen";
 @import "circle";
 @import "helpers";
+@import "partials/buttons";
+@import "partials/figures";
+@import "partials/forms";
+@import "partials/layout";
 
 $purple: $mypurple;
 
@@ -30,7 +34,7 @@ $purple: $mypurple;
   font-weight:300;
 }
 .my-container{
-  padding:1em;
+  padding:2em;
 }
 .row {
   margin-right: -15px;
@@ -39,7 +43,7 @@ $purple: $mypurple;
 }
 
 .hero {
-    height: 10em;
+    height: 7em;
     justify-content: center;
     align-items: center;
     &.messages-hero{
@@ -983,4 +987,10 @@ form#new_user {
   .br-theme-bars-1to10 .br-widget .br-current-rating {
     color: black;
   }
+}
+
+//error styling
+#error_explanation h2 {
+    font-size: 1.5rem;
+    color: $error-color;
 }
