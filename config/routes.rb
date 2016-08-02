@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   devise_for :admins
-  devise_for :users, controllers: {registrations: 'registrations'}
+  devise_for :users, controllers: {registrations: 'registrations'} do
+  end
+  get '/congrats', to: 'welcome#congrats'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
@@ -37,10 +39,11 @@ Rails.application.routes.draw do
 
 
 
+
   resources :messages, only: [:new, :create]
 
   get 'tags/:tag', to: 'projects#index', as: :tag
-  
+
   authenticated :user do
    root 'welcome#index', as: :authenticated_root
   end

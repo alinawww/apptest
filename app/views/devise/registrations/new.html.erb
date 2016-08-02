@@ -1,47 +1,41 @@
-<div class="row flex hero signup-hero">
-  <i class="fa fa-rocket"></i>
-</div>
-<div class="row title-area">
-  <div class="col-xs-12 text-center">
-    <h3>We're one click away</h3>
+<div class="extended-bottom">
+  <div class="row flex hero signup-hero">
+    <i class="fa fa-rocket"></i>
   </div>
-</div>
-<div class="row my-container">
-  <%= form_for(resource, as: resource_name, url: user_registration_path) do |f| %>
-
+  <div class="row title-area">
+    <div class="col-xs-12 text-center">
+      <h3>We're one click away</h3>
+    </div>
+  </div>
+  <div class="row my-container">
+    <%= form_for(resource, as: resource_name, url: user_registration_path) do |f| %>
       <div class="signup-form">
         <%= devise_error_messages! %>
         <div class="field">
-          <!-- <i class="material-icons prefix">account_circle</i> -->
           <%= f.label :name, class:"form-label"%><br />
           <%= f.text_field :name, autofocus: true %>
         </div>
         <div class="field">
-          <!-- <i class="material-icons prefix">email</i> -->
           <%= f.label :email, class:"form-label" %><br />
           <%= f.email_field :email, autofocus: true %>
         </div>
 
         <div class="field">
-          <!-- <i class="material-icons prefix">lock_outline</i> -->
           <%= f.label :password, class:"form-label" %>
           <% if @minimum_password_length %>
-          <!-- <em>(<%= @minimum_password_length %> characters minimum)</em> -->
           <% end %><br />
           <%= f.password_field :password, autocomplete: "off" %>
         </div>
 
         <div class="field">
-          <!-- <i class="material-icons prefix">lock</i> -->
           <%= f.label :password_confirmation, class:"form-label" %><br />
           <%= f.password_field :password_confirmation, autocomplete: "off" %>
         </div>
         <%= f.hidden_field :type, value: "Attendee" %>
-        <div class="actions signup-btn">
+        <div class="actions log-btn">
           <%= f.submit "Sign up" , class:"btn"%>
         </div>
       <% end %>
       </div>
-  <!-- <%= render "devise/shared/links" %> -->
-
+  </div>
 </div>

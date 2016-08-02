@@ -224,7 +224,7 @@ a.signup {
     letter-spacing: 2px;
 }
 
-.signup-btn{
+.log-btn{
   position: relative;
   .btn{
     position: fixed;
@@ -253,6 +253,14 @@ a.signup {
   flex-direction: column;
   background: radial-gradient(ellipse at bottom, #51427c 0%, #28213e 100%);
   overflow: hidden;
+}
+.home-congrats{
+  height:100vh;
+  display: flex;
+  flex-direction: column;
+  background: radial-gradient(ellipse at bottom, #51427c 0%, #28213e 100%);
+  overflow: hidden;
+  color:transparentize($white, .3);
 }
 
 .intro-top{
@@ -993,4 +1001,11 @@ form#new_user {
 #error_explanation h2 {
     font-size: 1.5rem;
     color: $error-color;
+}
+
+.devse-shared-links{
+  padding:2em 0;
+  a{
+  margin-bottom:2em;
+  }
 }
