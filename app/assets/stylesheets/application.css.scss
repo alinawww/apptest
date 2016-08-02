@@ -26,7 +26,9 @@
 $purple: $mypurple;
 // @import "_navbar";
 
-
+html {
+   font-family: 'Roboto', sans-serif;
+ }
 @media(max-width:684px){
   html{
     font-size:10px!important;
@@ -116,6 +118,7 @@ $purple: $mypurple;
 .navbar{
   padding: 1em;
   left: auto;
+  width:100%;
   .button-collapse{
     i{
       font-size: 3em;
@@ -862,7 +865,10 @@ form#new_user {
     }
   }
 }
-
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
+  color: $purple;
+  margin-right: 0;
+}
 
 .br-theme-bars-1to10 .br-widget {
   height: 50px;

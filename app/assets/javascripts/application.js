@@ -15,12 +15,13 @@
 //= require jquery_ujs
 
 //= require jquery.turbolinks
+
+//= require jquery.barrating
 //= require chosen-jquery
 //= require messages
-//= require jquery.barrating
 
-//= require turbolinks
-//= require mo.min
+
+
 //= require bootstrap-sprockets
 //= require jquery.touchSwipe
 

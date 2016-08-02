@@ -1066,7 +1066,9 @@
 
 
 .rating-circle {
-    margin-top: -75px;
+    &.negative-top{
+      margin-top: -75px;
+    }
     .c100{
       float: none;
       margin: 0 auto;

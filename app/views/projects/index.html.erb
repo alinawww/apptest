@@ -13,33 +13,67 @@
           <p><%= project.description%></p>
         </div>
 
-        <div class="card-action">
+        <div class="card-action project-desc">
           <%project.tag_list.each do |tag|%>
-            <span class="label">
+            <span class="label secondary">
               <%= link_to tag, tag_path(tag)%>
             </span>
           <%end%>
         </div>
 
-        <div class="card-reveal" style="display: none; transform: translateY(0px);">
-          <span class="card-title grey-text text-darken-4"><%= project.name%><i class="material-icons right">close</i></span>
-          <div class="c100 p25">
-            <span><%= @average %></span>
-            <div class="slice">
-                <div class="bar"></div>
-                <div class="fill"></div>
-            </div>
+        <div class="card-reveal text-center" style="display: none; transform: translateY(0px);">
+          <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
+          <div class="rating-circle">
+            <%if project.ratings.length > 0 %>
+              <%@average = project.ratings.average(:value).floor%>
+              <div class="c100 p<%= @average*10%>">
+                <span>
+                  <%if @average <= 2 %>
+                    <img src= <%= asset_path("sad2.svg")%> alt="...">
+                  <%elsif @average > 2 && @average <= 4%>
+                    <img src= <%= asset_path("sad1.svg")%> alt="...">
+                  <%elsif @average > 4 && @average <= 6%>
+                    <img src= <%= asset_path("neutral.svg")%> alt="...">
+                  <%elsif @average > 6 && @average <= 8%>
+                    <img src= <%= asset_path("happy1.svg")%> alt="...">
+                  <%elsif @average > 8 && @average <= 10 %>
+                    <img src= <%= asset_path("happy2.svg")%> alt="...">
+                  <%end%>
+                </span>
+                <div class="slice">
+                    <div class="bar"></div>
+                    <div class="fill"></div>
+                </div>
+              </div>
+            <%else%>
+              <div class="c100 p0">
+                <span>
+                  <img src= <%= asset_path("neutral.svg")%> alt="...">
+                </span>
+                <div class="slice">
+                    <div class="bar"></div>
+                    <div class="fill"></div>
+                </div>
+              </div>
+            <%end%>
           </div>
+          <h3><%= project.name%></h3>
           <%= form_for [project.user, project], url: user_project_ratings_path(project.user.id, project.id), method: "POST" do |f| %>
-
-             <div class="form-group">
-
-               <%= f.label :ratings%> <small>What grade do you wanna give?</small>
-
-              <%= f.select( :ratings, (0..10).collect{|u| [u]})-%>
-
-             </div>
-             <%= f.submit "Rate", class:"btn" %>
+          <div class="form-group">
+            <div class="row flex">
+              <div class="col-xs-2 middle">
+                <img src= <%= asset_path("sad2.svg")%> alt="...">
+              </div>
+              <div class="col-xs-8 middle">
+                <h5>Rate this project</h5>
+              </div>
+              <div class="col-xs-2 middle">
+                <img src= <%= asset_path("happy2.svg")%> alt="...">
+              </div>
+            </div>
+            <%= f.select( :ratings, (0..10).collect{|u| [u]})-%>
+          </div>
+             <%= f.submit "Rate", class:"btn btn-large btn-round waves-effect waves-light" %>
            <% end %>
         </div>
     </div>
