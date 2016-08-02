@@ -42,7 +42,9 @@ class ProjectsController < ApplicationController
     @project = Project.find_by_id(params[:id])
     @rating = @project.ratings.new
     @ratings = @project.ratings.all
-    @average = @project.ratings.average(:value)
+    if @ratings.length > 0
+        @average = @project.ratings.average(:value).floor
+    end
   end
 
   def favorite

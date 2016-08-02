@@ -23,7 +23,13 @@
 
         <div class="card-reveal" style="display: none; transform: translateY(0px);">
           <span class="card-title grey-text text-darken-4"><%= project.name%><i class="material-icons right">close</i></span>
-
+          <div class="c100 p25">
+            <span><%= @average %></span>
+            <div class="slice">
+                <div class="bar"></div>
+                <div class="fill"></div>
+            </div>
+          </div>
           <%= form_for [project.user, project], url: user_project_ratings_path(project.user.id, project.id), method: "POST" do |f| %>
 
              <div class="form-group">

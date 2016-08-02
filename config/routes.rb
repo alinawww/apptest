@@ -42,9 +42,10 @@ Rails.application.routes.draw do
   resources :messages, only: [:new, :create]
 
   get 'tags/:tag', to: 'projects#index', as: :tag
-  root to: "home#index"
   authenticated :user do
    root 'welcome#index', as: :authenticated_root
   end
+  root to: "home#index"
+
   get '/welcome' => "welcome#index", as: :user_root
 end
