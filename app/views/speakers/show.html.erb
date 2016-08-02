@@ -50,7 +50,7 @@
 
       </div>
       <div class="body">
-        <h4><a class="small-icon" href="<%= edit_user_project_path(current_user.id, project.id)%>"><i class="fa fa-edit "></i></a> PROJECT: <span class="project-name"><%= project.name%> </span></h4>
+        <h4>PROJECT: <span class="project-name"><%= project.name%> </span></h4>
         <p><%= project.description%></p>
         <div class="tags">
           <%project.tag_list.each do |tag|%>
@@ -60,6 +60,8 @@
           </span>
           <%end%>
         </div>
+        <br>
+        <%= link_to "Edit project", edit_user_project_path(current_user.id, project.id), class:"btn btn-large btn-block" %>
       </div>
       <%end%>
     <%end%>

@@ -26,7 +26,7 @@
     <% end %>
 
     <div class="field">
-      <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+      <%= f.label :new_password, placeholder: "leave blank if you don't want to change it" %><br />
       <%= f.password_field :password, autocomplete: "off" %>
       <% if @minimum_password_length %>
         <br />
@@ -35,7 +35,7 @@
     </div>
 
     <div class="field">
-      <%= f.label :password_confirmation %><br />
+      <%= f.label :new_password_confirmation %><br />
       <%= f.password_field :password_confirmation, autocomplete: "off" %>
     </div>
     <div class="social-edit">
@@ -54,7 +54,7 @@
     </div>
 </div>
 
-<div class="row summary-edit">
+<div class="row description-edit">
   <div class="col-xs-12">
     <div class="my-container">
       <h4>Let the world know how awesome you are</h4>
@@ -69,7 +69,7 @@
   <div class="actions-edit">
       <%= f.submit "Update", class: "btn btn-large" %>
   <% end %>
-  <%= link_to "Back", :back, class:"btn btn-large" %>
+  <%= link_to "Go back", :back, class:"btn btn-large button-disabled-color" %>
   <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, class:"btn-danger btn btn-large", method: :delete %>
   </div>
 </div>
