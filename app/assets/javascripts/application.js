@@ -29,34 +29,6 @@
 //= require_tree .
 
 $(document).ready(function(){
-  //Enable swiping...
-  // $(".js-extended").swipe( {
-  //   //Generic swipe handler for all directions
-  //   swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
-  //     // function goToURL() {
-  //     //   location.href = 'http://google.it';
-  //     //
-  //     // }
-  //     $(this).text("You swiped " + direction );
-  //   },
-  //   //Default is 75px, set to 0 for demo so any distance triggers swipe
-  //    threshold:0
-  // });
-
-// Show signup form in two steps
-  $('.signup-speaker-btn').click(function() {
-     if($('#speaker-btn').is(':checked')) {
-       $('.second-step').removeClass('hidden')
-       $('.first-step').addClass('hidden')
-      }
-  });
-  $('.signup-attendee-btn').click(function() {
-     if($('#attendee-btn').is(':checked')) {
-       $('.second-step').removeClass('hidden')
-       $('.first-step').addClass('hidden')
-      }
-  });
-
 
   //call side nav
   $(".button-collapse").sideNav();
@@ -64,7 +36,7 @@ $(document).ready(function(){
   //swipe alerts away
   var $alert = $('.alert');
   if($alert.length > 0){
-    Materialize.toast($alert, 5000);
+    Materialize.toast($alert, 3000);
   }
 
   //preview new avatar
