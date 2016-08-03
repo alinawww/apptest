@@ -10,3 +10,9 @@
     max-width: 250px;
   }
 }
+
+@media(max-width: 400px){
+  .intro-top h2{
+    font-size: 1.5rem;
+  }
+}

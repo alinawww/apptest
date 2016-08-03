@@ -282,8 +282,7 @@ color:$purple;
   flex-wrap: wrap;
   height:40vh;
   .btn{
-    width: 46%;
-    margin:1%;
+    width: 50%;
     height: 50%;
     display: flex;
     align-items: center;
@@ -291,6 +290,8 @@ color:$purple;
     justify-content: center;
     text-transform: uppercase;
     letter-spacing: 1px;
+    white-space: normal;
+    line-height: 2em;
   }
 }
 .flex{
