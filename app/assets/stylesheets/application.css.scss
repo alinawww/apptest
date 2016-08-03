@@ -193,12 +193,6 @@ img{
   }
 }
 
-// notice and alert
-.notice, .alert {
-    position: absolute;
-    color:red;
-}
-
 //logo
 .logo {
     display: block;
@@ -976,5 +970,7 @@ form#new_user {
   margin-bottom:2em;
   }
 }
-
+.alert{
+  margin:0;
+}
 @import "media_queries";

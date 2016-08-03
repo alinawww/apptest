@@ -36,7 +36,7 @@ $(document).ready(function(){
   //swipe alerts away
   var $alert = $('.alert');
   if($alert.length > 0){
-    Materialize.toast($alert, 3000);
+    Materialize.toast($alert, 153000);
   }
 
   //preview new avatar
