@@ -26,6 +26,7 @@
 @import "partials/figures";
 @import "partials/forms";
 @import "partials/layout";
+@import "mixins";
 
 $purple: $mypurple;
 
@@ -120,10 +121,7 @@ $purple: $mypurple;
     }
   }
   &.stuck{
-    background: #9D50BB;
-    background: -webkit-linear-gradient(to left, #9D50BB, #6E48AA);
-    background: -webkit-linear-gradient(right, #9D50BB, #6E48AA);
-    background: linear-gradient(to left, #9D50BB, #6E48AA);
+    @include linear-gradient($mypurple, $purple-light);
     transition: all ease-in-out 300ms;
     box-shadow: 0 0 7px rgba(0, 0, 0, 0.34);
   }
@@ -438,6 +436,7 @@ background: linear-gradient(120deg, #51426e, $mypurple);
   border-radius: 40px;
   margin-top: 2em;
   color: $mypurple;
+  text-align: center;
   &:hover{
     text-decoration: none;
   }
@@ -974,5 +973,11 @@ form#new_user {
 }
 .alert{
   margin:0;
+}
+.empty-page{
+  h3{
+    color:transparentize($black, .7);
+    line-height: 1.5em;
+  }
 }
 @import "media_queries";
