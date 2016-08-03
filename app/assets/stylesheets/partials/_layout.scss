@@ -10,6 +10,9 @@
   align-items: center;
   background: $mypurple;
   color: $white;
+  a{
+    color:inherit;
+  }
 }
 
 .title-area {

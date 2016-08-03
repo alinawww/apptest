@@ -1,23 +1,35 @@
-<h1>these are your conversations</h1>
-<%= link_to "New Message", new_message_path%>
-<div class="row">
-  <div class="col-sm-3">
-    <ul class="nav nav-pills nav-stacked">
-      <%= mailbox_section 'inbox', @box %>
-      <%= mailbox_section 'sent', @box %>
-      <%= mailbox_section 'trash', @box %>
+<div class="row hero messages-hero flex">
+  <i class="fa fa-envelope"></i>
+</div>
+<div class="my-container">
+  <div class="row">
+    <div class="col-sm-3">
+      <ul class="nav nav-pills">
+        <%= mailbox_section 'inbox', @box %>
+        <%= mailbox_section 'sent', @box %>
+        <%= mailbox_section 'trash', @box %>
+      </ul>
+    </div>
+    <br>
+    <div class="col-sm-9">
+    <ul class="list-group">
+      <%= render partial: 'conversations/conversation', collection: @conversations %>
     </ul>
+    <%= will_paginate %>
+    </div>
   </div>
 
-  <div class="col-sm-9">
-  <% if @box == 'trash' %>
-    <p><%= link_to 'Empty trash', empty_trash_conversations_path, class: 'btn btn-danger', method: :delete,
-                   data: {confirm: 'Are you sure?'} %></p>
-  <% end %>
-  <ul class="list-group">
-    <%= render partial: 'conversations/conversation', collection: @conversations %>
-  </ul>
+  <div class="fixed-bottom">
+    <div class="my-container">
+      <div class="row">
+        <div class="col-xs-6">  <a class="btn-large btn-floating waves-effect waves-light" href="<%= new_message_path%>"><i class="material-icons">add</i></a></div>
+        <div class="col-xs-6">
+          <% if @box == 'trash' %>
+          <p><%= link_to 'Empty trash', empty_trash_conversations_path, class: 'btn btn-danger', method: :delete, data: {confirm: 'Are you sure?'} %></p>
+        <% end %>
+      </div>
+      </div>
 
-  <%= will_paginate %>
+    </div>
   </div>
 </div>
