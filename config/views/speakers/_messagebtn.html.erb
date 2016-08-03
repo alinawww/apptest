@@ -1,0 +1,14 @@
+<% if @speaker.id == current_user.id %>
+  <script>
+  $(document).ready(function(){
+    $('.button-msg').text('You have 1 message')
+    $('.contact .fa-envelope-o').addClass('full')
+  });
+  </script>
+<% else %>
+  <script>
+  $(document).ready(function(){
+    $('.button-msg').text("Contact " + "<%= @speaker.name.capitalize%>")
+  });
+  </script>
+<% end %>

@@ -1,0 +1,12 @@
+
+  <ul id="slide-out" class="side-nav">
+    <li><div class="userView">
+      <img src= <%= asset_path("bg.jpeg")%> alt="..." class="background">
+      <a href="mailto:#"><span class="white-text email"><%= current_admin.email%></span></a>
+    </div></li>
+    <li><%= link_to user_root_path do %><i class="fa fa-home" aria-hidden="true"></i>Home <% end %></li>
+    <li><%= link_to current_user do%><i class="fa fa-user" aria-hidden="true"></i>My profile<%end%></li>
+    <li><%= link_to agenda_index_path do%><i class="fa fa-calendar" aria-hidden="true"></i>Agenda<%end%></li>
+    <li><%= link_to speakers_path do%><i class="fa fa-microphone" aria-hidden="true"></i>Speakers<%end%></li>
+    <li><%= link_to destroy_user_session_path, :method => :delete do%><i class="fa fa-code" aria-hidden="true"></i>Sign Out<%end%></li>
+  </ul>

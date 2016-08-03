@@ -1,0 +1,72 @@
+<div class="row hero project-hero flex" style="background:url(<%= @project.avatar.url%>) center; background-size:cover;">
+
+</div>
+
+<div class="my-container text-center">
+  <div class="rating-circle negative-top">
+    <%if @ratings.length > 0 %>
+      <div class="c100 p<%= @average*10%>">
+        <span>
+          <%if @average <= 2 %>
+            <img src= <%= asset_path("sad2.svg")%> alt="...">
+          <%elsif @average > 2 && @average <= 4%>
+            <img src= <%= asset_path("sad1.svg")%> alt="...">
+          <%elsif @average > 4 && @average <= 6%>
+            <img src= <%= asset_path("neutral.svg")%> alt="...">
+          <%elsif @average > 6 && @average <= 8%>
+            <img src= <%= asset_path("happy1.svg")%> alt="...">
+          <%elsif @average > 8 && @average <= 10 %>
+            <img src= <%= asset_path("happy2.svg")%> alt="...">
+          <%end%>
+        </span>
+        <div class="slice">
+            <div class="bar"></div>
+            <div class="fill"></div>
+        </div>
+      </div>
+    <%else%>
+      <div class="c100 p0">
+        <span>
+          <img src= <%= asset_path("neutral.svg")%> alt="...">
+        </span>
+        <div class="slice">
+            <div class="bar"></div>
+            <div class="fill"></div>
+        </div>
+      </div>
+    <%end%>
+  </div>
+
+  <div class="project-desc">
+    <h3><%= @project.name%></h3>
+    <p><%= @project.description%></p>
+    <div class="tags">
+      <%@project.tag_list.each do |tag|%>
+      <span class="label secondary">
+        <%= link_to tag, tag_path(tag)%>
+      </span>
+      <%end%>
+    </div>
+  </div>
+<br>
+  <div class="rating-form">
+    <%= form_for [@user, @project], url: user_project_ratings_path(@user.id, @project.id), method: "POST" do |f| %>
+     <div class="form-group">
+       <div class="row flex">
+         <div class="col-xs-2 middle">
+           <img src= <%= asset_path("sad2.svg")%> alt="...">
+         </div>
+         <div class="col-xs-8 middle">
+           <h4>Rate this project</h4>
+         </div>
+         <div class="col-xs-2 middle">
+           <img src= <%= asset_path("happy2.svg")%> alt="...">
+         </div>
+       </div>
+       <%= f.select( :ratings, (0..10).collect{|u| [u]})-%>
+
+     </div>
+     <%= f.submit "Rate", class:"btn btn-large btn-round waves-effect waves-light" %>
+    <% end %>
+  </div>
+</div>
