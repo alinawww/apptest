@@ -54,7 +54,7 @@ label{
   }
   .btn-danger{
     background: $error-color;
-    color: $white;
+    color: $white!important;
   }
 }
 
@@ -64,5 +64,5 @@ label{
       border-bottom: 1px solid #9e9e9e;
       margin-bottom: 2em;
   }
-  
+
 }

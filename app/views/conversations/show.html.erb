@@ -20,13 +20,21 @@
               </div>
             </div>
             <div class="col-xs-2">
-              <div class="avatar small" style="background: url(<%= message.sender.avatar.url%>) center; background-size:cover"></div>
+              <%if message.sender.type == "Speaker"%>
+                <div class="avatar small" style="background: url(<%= message.sender.avatar.url%>) center; background-size:cover"></div>
+              <%else%>
+                <div class="avatar small" style="background: url(<%= asset_path("guest.jpg")%>) center; background-size:cover"></div>
+              <%end%>
             </div>
           </div>
         <%else%>
         <div class="chat-item">
           <div class="col-xs-2">
-            <div class="avatar small" style="background: url(<%= message.sender.avatar.url%>) center; background-size:cover"></div>
+            <%if message.sender.type == "Speaker"%>
+              <div class="avatar small" style="background: url(<%= message.sender.avatar.url%>) center; background-size:cover"></div>
+            <%else%>
+              <div class="avatar small" style="background: url(<%= asset_path("guest.jpg")%>) center; background-size:cover"></div>
+            <%end%>
           </div>
           <div class="col-xs-10 message-body right-sharp">
             <p><%= message.body %></p>

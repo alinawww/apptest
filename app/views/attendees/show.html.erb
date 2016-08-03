@@ -1,1 +1,21 @@
-<h2>Hello <%= @attendee.name%></h2>
+<div class="fixed-top">
+  <a class="btn-large btn-floating waves-effect waves-light" href="<%= edit_user_registration_path(@attendee.id)%>"><i class="material-icons">edit</i></a>
+</div>
+
+
+<div class="row intro">
+  <div class="avatar" style="background:url(<%= asset_path("guest.jpg")%>) center; background-size:cover">
+  </div>
+  <h4 class="user-name">Hello <%= @attendee.name%></h4>
+
+  <a class="contact" href="<%= conversations_path%>">
+    <i class="fa fa-envelope-o"></i>&nbsp;&nbsp;
+    <span class="button-msg">
+      <%if @messages_count = current_user.mailbox.inbox({:read => false}).count == 0%>
+      No unread messages.
+      <%else%>
+      you have <%=@messages_count = current_user.mailbox.inbox({:read => false}).count%> unread messages.
+      <%end%>
+    </span>
+  </a>
+</div>

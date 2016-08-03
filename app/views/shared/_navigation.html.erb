@@ -6,9 +6,9 @@
         <%if current_user.type == "Speaker"%>
           <img class="circle" src= <%= current_user.avatar.url%> alt="...">
         <%elsif current_user.type == "Attendee"%>
-          <img class="circle" src="http://placehold.it/100x100" alt="...">
+          <img class="circle" src=<%= asset_path("guest.jpg")%> alt="...">
         <%else%>
-          <img class="circle" src="http://placehold.it/100x100" alt="...">
+          <img class="circle" src=<%= asset_path("guest.jpg")%> alt="...">
         <%end%>
       </a>
       <a href="<%current_user%>"><span class="white-text name"><%= current_user.name.capitalize%></span></a>
