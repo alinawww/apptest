@@ -49,7 +49,7 @@
     </div>
   </div>
 <br>
-<% if current_user.ratings.find_by(id: project.id) == nil%>
+<% if current_user.ratings.find_by(id: @project.id) == nil%>
   <div class="rating-form">
     <%= form_for [@user, @project], url: user_project_ratings_path(@user.id, @project.id), method: "POST" do |f| %>
      <div class="form-group">
@@ -71,6 +71,8 @@
     <% end %>
   </div>
   <%else%>
-    <h3>You've ratied this projct. Thanks! :)</h3>
+    <h3><i class="fa fa-check"></i></h3>  
+    <h4>You've rated this project.</h4>
+    <h4> Thank you!</h4>
   <%end%>
 </div>

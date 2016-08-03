@@ -10,15 +10,12 @@ class RatingsController < ApplicationController
     @user = current_user
     @project = Project.find_by_id(params[:project_id])
     @rating = Rating.new(value: params[:project][:ratings], project: @project, user: current_user)
-
     if @rating.save
       current_user.ratings << @project
       redirect_to(:back)
-
     else
-     redirect_to user_project_path(@user.id, @project.id), notice: "that didn't work"
+      redirect_to(:back)
     end
-
   end
 
   def show
