@@ -22,6 +22,7 @@
 @import "chosen";
 @import "circle";
 @import "helpers";
+@import "navbar";
 @import "partials/buttons";
 @import "partials/figures";
 @import "partials/forms";
@@ -44,7 +45,7 @@ $purple: $mypurple;
 }
 
 .hero {
-    height: 7em;
+    height: 5em;
     justify-content: center;
     align-items: center;
     &.messages-hero{
@@ -121,23 +122,13 @@ $purple: $mypurple;
     }
   }
   &.stuck{
-    @include linear-gradient($mypurple, $purple-light);
+    @include linear-gradient(120deg, $mypurple, $purple-light);
     transition: all ease-in-out 300ms;
     box-shadow: 0 0 7px rgba(0, 0, 0, 0.34);
   }
 }
-.navbar-fixed-top{
-  // z-index: 99999!important;
-}
 
 // ELEMENTS //
-
-.fixed-top {
-  position: fixed;
-  top: 10px;
-  left: 10px;
-  z-index: 9999;
-}
 
 
 
@@ -249,7 +240,7 @@ a.signup {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding:1em;
+  padding:1em 2em;
   h2{
     color: $white;
     letter-spacing: 2px;
@@ -458,7 +449,7 @@ background: linear-gradient(120deg, #51426e, $mypurple);
 }
 
 .summary {
-    margin-top: 50px;
+    margin-top: 20px;
     text-align: center;
     padding: 20px;
 }
