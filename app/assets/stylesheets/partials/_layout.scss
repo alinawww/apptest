@@ -5,11 +5,14 @@
 }
 
 .hero{
-  height: 10em;
+  height: 5em;
   justify-content: center;
   align-items: center;
   background: $mypurple;
   color: $white;
+  a{
+    color:inherit;
+  }
 }
 
 .title-area {

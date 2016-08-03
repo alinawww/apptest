@@ -1,5 +1,5 @@
 <div class="row hero messages-hero flex">
-  <i class="fa fa-envelope"></i>
+  <%= link_to conversations_path do%><i class="fa fa-envelope"></i><%end%>
 </div>
 
 <div>
@@ -37,7 +37,7 @@
             <%end%>
           </div>
           <div class="col-xs-10 message-body right-sharp">
-            <p><%= message.body %></p> 
+            <p><%= message.body %></p>
             <div class="sender-details">
               <%= message.sender.name %>
                 says at <%= message.created_at.strftime("%-d %B %Y, %H:%M:%S") %>
@@ -56,7 +56,7 @@
     </div>
   </div>
   <div class="row col-xs-2">
-    <%= button_tag(type: "submit", class: "btn btn-secondary") do %>
+    <%= button_tag(type: "submit", class: "send-message") do %>
     <i class="material-icons">message</i>
     <% end %>
   </div>

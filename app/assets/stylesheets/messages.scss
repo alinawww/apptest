@@ -1,3 +1,26 @@
 // Place all the styles related to the messages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+ul{
+  &.nav{
+    &.nav-pills{
+      display: flex;
+      border: 1px solid #ddd;
+      border-radius:4px;
+      li{
+        display: flex;
+        align-self: stretch;
+        width: 100%;
+        a{
+          width: 100%;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover{
+  background-color: $mypurple;
+}

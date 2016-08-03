@@ -1,18 +1,28 @@
 .side-nav li > a > i, .side-nav li > a > [class^="mdi-"], .side-nav li > a > [class*="mdi-"], .side-nav li > a > i.material-icons{
   margin-right:15px;
-  color: $purple;
+  color: $mypurple;
   font-size: 1.2em;
 }
 
 .navbar{
   padding: 1em;
   left: auto;
+  .logo{
+    margin: 0 auto;
+    display: none;
+    img{
+      margin: 0 auto;
+      width: 60px;
+    }
+  }
+  &.stuck{
+    .logo{
+      display: block;
+    }
+  }
   .button-collapse{
     i{
       font-size: 3em;
     }
   }
-}
-.navbar-fixed-top{
-  z-index: 99999;
 }

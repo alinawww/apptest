@@ -5,5 +5,5 @@ class Speaker < User
                     whiny: false,
                     use_timestamp: false
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
-  
+
 end
