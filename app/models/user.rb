@@ -22,10 +22,7 @@ class User < ApplicationRecord
   def mailboxer_email(object)
     email
   end
-
   def self.types
         %w(Speaker Attendee)
   end
-
-
 end

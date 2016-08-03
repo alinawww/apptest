@@ -21,26 +21,26 @@
 
 .toast {
   @extend .z-depth-1;
-  // border-radius: 2px;
-  // top: 0;
-  // width: auto;
-  // clear: both;
-  // margin:1em auto;
-  // position: relative;
-  // max-width:80%;
-  // height: auto;
-  // min-height: $toast-height;
-  // line-height: 1.5em;
-  // word-break: break-all;
-  // background-color: $toast-color;
-  // padding: 10px 25px;
-  // font-size: 1.1rem;
-  // font-weight: 300;
-  // color: $toast-text-color;
-  //
-  // display: flex;
-  // align-items: center;
-  // justify-content: space-between;
+  border-radius: 2px;
+  top: 0;
+  width: auto;
+  clear: both;
+  margin:1em auto;
+  position: relative;
+  max-width:80%;
+  height: auto;
+  min-height: $toast-height;
+  line-height: 1.5em;
+  word-break: break-all;
+  background-color: $toast-color;
+  padding: 10px 25px;
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: $toast-text-color;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
   .btn, .btn-flat {
     margin: 0;
@@ -52,8 +52,8 @@
   }
 
   @media #{$small-and-down} {
-    // width:80%;
-    // border-radius: 50px;
+    width:80%;
+    border-radius: 50px;
   }
   @media #{$medium-only} {
     float: left;
