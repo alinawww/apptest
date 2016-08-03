@@ -15,8 +15,9 @@
 
  // GENERAL //
 @import "variables";
-@import "bootstrap-sprockets";
-@import "bootstrap";
+// @import "bootstrap-sprockets";
+// @import "bootstrap";
+@import url("roboto/Roboto-Regular.ttf");
 @import "materialize";
 @import "font-awesome";
 @import "chosen";
