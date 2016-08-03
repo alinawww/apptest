@@ -17,3 +17,39 @@
     color:$mypurple;
   }
 }
+
+.log-btn{
+  position: relative;
+  .btn{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    right: 0;
+    height: 5em;
+    color: $mypurple;
+  }
+}
+
+.log-btns {
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .btn{
+      width: 80%;
+      margin: 10px auto;
+      padding: 20px;
+      font-size: 16px;
+      height:auto;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      border-radius: 60px;
+      background: #136a8a;
+      background: -webkit-linear-gradient(to left, #136a8a , rgba(78, 255, 239, 0.76));
+      background: linear-gradient(to left, #136a8a , rgba(78, 255, 239, 0.76));
+      border: 0;
+      color: $white!important;
+    }
+}
