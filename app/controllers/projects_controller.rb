@@ -1,12 +1,6 @@
 class ProjectsController < ApplicationController
   def index
     @projects = Project.all
-    # @user = User.find_by_id(params[:user_id])
-    # byebug
-    # @project = Project.find_by_id(params[:id])
-    # # @rating = @project.ratings.new
-    # @ratings = @project.ratings.all
-    # @average = @project.ratings.average(:value)
   end
   def new
     @user = User.find_by(id: params[:user_id])
@@ -30,7 +24,6 @@ class ProjectsController < ApplicationController
   def update
     @user = User.find_by_id(params[:user_id])
     @project = Project.find_by_id(params[:id])
-    # @ratings = @project.ratings.all
     if @project.update_attributes(name:params[:project][:name], description:params[:project][:description], avatar:params[:project][:avatar], user_id:params[:user_id], tag_list:params[:project][:tag_list] )
       redirect_to user_project_path(@user.id, @project.id)
     else

@@ -32,9 +32,9 @@
                     <img src= <%= asset_path("sad2.svg")%> alt="...">
                   <%elsif @average > 2 && @average <= 4%>
                     <img src= <%= asset_path("sad1.svg")%> alt="...">
-                  <%elsif @average > 4 && @average <= 6%>
+                  <%elsif @average == 5%>
                     <img src= <%= asset_path("neutral.svg")%> alt="...">
-                  <%elsif @average > 6 && @average <= 8%>
+                  <%elsif @average > 5 && @average <= 8%>
                     <img src= <%= asset_path("happy1.svg")%> alt="...">
                   <%elsif @average > 8 && @average <= 10 %>
                     <img src= <%= asset_path("happy2.svg")%> alt="...">
@@ -58,23 +58,27 @@
             <%end%>
           </div>
           <h3><%= project.name%></h3>
-          <%= form_for [project.user, project], url: user_project_ratings_path(project.user.id, project.id), method: "POST" do |f| %>
-          <div class="form-group">
-            <div class="row flex">
-              <div class="col-xs-2 middle">
-                <img src= <%= asset_path("sad2.svg")%> alt="...">
+          <% if current_user.ratings.find_by(id: project.id) == nil%>
+            <%= form_for [project.user, project], url: user_project_ratings_path(project.user.id, project.id), method: "POST" do |f| %>
+            <div class="form-group">
+              <div class="row flex">
+                <div class="col-xs-2 middle">
+                  <img src= <%= asset_path("sad2.svg")%> alt="...">
+                </div>
+                <div class="col-xs-8 middle">
+                  <h5>Rate this project</h5>
+                </div>
+                <div class="col-xs-2 middle">
+                  <img src= <%= asset_path("happy2.svg")%> alt="...">
+                </div>
               </div>
-              <div class="col-xs-8 middle">
-                <h5>Rate this project</h5>
-              </div>
-              <div class="col-xs-2 middle">
-                <img src= <%= asset_path("happy2.svg")%> alt="...">
-              </div>
+              <%= f.select( :ratings, (0..10).collect{|u| [u]})-%>
             </div>
-            <%= f.select( :ratings, (0..10).collect{|u| [u]})-%>
-          </div>
-             <%= f.submit "Rate", class:"btn btn-large btn-round waves-effect waves-light" %>
-           <% end %>
+               <%= f.submit "Rate", class:"btn btn-large btn-round waves-effect waves-light" %>
+             <% end %>
+            <%else%>
+            <h5>You've rated this project with.</h5>
+            <%end%>
         </div>
     </div>
   <%end%>

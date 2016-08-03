@@ -18,6 +18,7 @@ Rails.application.routes.draw do
       resources :projects do
         resources :ratings
         put :favorite, on: :member
+        put :rating, on: :member
       end
 
   end
