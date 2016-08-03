@@ -1,5 +1,5 @@
 class SpeakersController < ApplicationController
-  # before_action :authenticate_user!, only: [:show]
+  before_action :authenticate_user!, only: [:edit]
 
   def index
     @speakers = Speaker.all

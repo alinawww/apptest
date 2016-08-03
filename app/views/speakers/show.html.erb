@@ -1,6 +1,8 @@
-<div class="fixed-top">
-  <a class="btn-large btn-floating waves-effect waves-light" href="<%= edit_user_registration_path(@speaker.id)%>"><i class="material-icons">edit</i></a>
-</div>
+<%if current_user.id == @speaker.id%>
+  <div class="fixed-top">
+    <a class="btn-large btn-floating waves-effect waves-light" href="<%= edit_user_registration_path(@speaker.id)%>"><i class="material-icons">edit</i></a>
+  </div>
+<%end%>
 
 
 <!-- <%= render 'messagebtn' %> -->
@@ -22,6 +24,7 @@
     </a>
   </div>
 
+<%if current_user.id == @speaker.id%>
   <a class="contact" href="<%= conversations_path%>">
     <i class="fa fa-envelope-o"></i>&nbsp;&nbsp;
     <span class="button-msg">
@@ -34,6 +37,14 @@
       <%end%>
     </span>
   </a>
+<%else%>
+<a class="contact" href="<%= new_message_path%>">
+  <i class="fa fa-envelope-o"></i>&nbsp;&nbsp;
+  <span class="button-msg">
+    Contact <%=@speaker.name %>
+  </span>
+</a>
+<%end%>
 </div>
 <div class="row summary">
   <div class="container">
@@ -43,7 +54,7 @@
 </div>
 <div class="row project-desc">
 
-    <%if @speaker.projects.empty?%>
+    <%if @speaker.projects.empty? && current_user.id == @speaker.id%>
     <div class="text-center">
       <div class="screenshot">
         <img src="https://source.unsplash.com/random/450x200" alt="">
@@ -70,7 +81,9 @@
           <%end%>
         </div>
         <br>
+        <%if current_user.id == @speaker.id%>
         <%= link_to "Edit project", edit_user_project_path(current_user.id, project.id), class:"btn btn-large btn-block waves-effect waves-light" %>
+        <%end%>
       </div>
       <%end%>
     <%end%>
