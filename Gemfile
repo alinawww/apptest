@@ -5,6 +5,7 @@ gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'omniauth-linkedin'
 
+gem 'rails_12factor', group: :production
 
 gem 'bootstrap-sass', '~> 3.3.6' #3.2.0 - old version
 gem 'autoprefixer-rails'
