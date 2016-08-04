@@ -2,16 +2,43 @@
 <html>
 <head>
   <title>The page you were looking for doesn't exist (404)</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,700,900" rel="stylesheet">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
+  img{
+    max-width: 100%;
+  }
   body {
-    background-color: #EFEFEF;
-    color: #2E2F30;
+    background: url('./images/space.jpg') center;
+    background-size:cover;
+    background-attachment: fixed;
+    color: #fff;
     text-align: center;
-    font-family: arial, sans-serif;
+    font-family:'Roboto', sans-serif;
+    font-weight:300;
     margin: 0;
   }
+  .my-dialog img{
+    max-width: 120px;
+  }
 
+
+  .my-dialog {
+    height: 100vh;
+    padding: 0 2em;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+.my-dialog h1{
+  font-weight:300;
+}
+.my-dialog p{
+  font-size: 24px;
+  line-height: 1.5em;
+}
+
+/*
   div.dialog {
     width: 95%;
     max-width: 33em;
@@ -29,14 +56,14 @@
     background-color: white;
     padding: 7px 12% 0;
     box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
-
+  }*/
+/*
   h1 {
     font-size: 100%;
     color: #730E15;
     line-height: 1.5em;
-  }
-
+  }*/
+/*
   div.dialog > p {
     margin: 0 0 1em;
     padding: 1em;
@@ -50,19 +77,53 @@
     border-top-color: #DADADA;
     color: #666;
     box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
+  }*/
+  .floating{
+    -webkit-animation-name: Floatingx;
+    -webkit-animation-duration: 3s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease-in-out;
+    -moz-animation-name: Floating;
+    -moz-animation-duration: 3s;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: ease-in-out;
+
+}
+
+@-webkit-keyframes Floatingx{
+    from {-webkit-transform:translate(0, 0px);}
+    65% {-webkit-transform:translate(0, 15px);}
+    to {-webkit-transform: translate(0, -0px);    }
+}
+
+@-moz-keyframes Floating{
+    from {-moz-transform:translate(0, 0px);}
+    65% {-moz-transform:translate(0, 15px);}
+    to {-moz-transform: translate(0, -0px);}
+}
+.my-dialog button {
+    background: #4effef;
+    border: 0;
+    padding: 1.5em 4em;
+    border-radius: 50px;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+
   </style>
 </head>
 
 <body>
   <!-- This file lives in public/404.html -->
-  <div class="dialog">
+  <div class="my-dialog">
     <div>
-      <img src="/wizzard.png" alt="">
+      <img src="./images/wizzard.png" alt="" class="floating">
       <h1>The page you were looking for doesn't exist.</h1>
       <p>You may have mistyped the address or the page may have moved.</p>
+      <a href="/"><button>Back home</button></a>
     </div>
-    <p>If you are the application owner check the logs for more information.</p>
   </div>
 </body>
 </html>
