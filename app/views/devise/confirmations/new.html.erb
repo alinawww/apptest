@@ -1,16 +1,27 @@
-<h2>Resend confirmation instructions</h2>
+<div class="row flex hero signup-hero">
+  <i class="fa fa-envelope-o"></i>
+</div>
+<div class="row title-area">
+  <div class="col-xs-12 text-center">
+    <h3>Resend confirmation instructions</h3>
+  </div>
+</div>
+<div class="my-container">
+  <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+    <%= devise_error_messages! %>
 
-<%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
-  <%= devise_error_messages! %>
+    <div class="field">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true, value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
+    </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
+    <div class="actions log-btn">
+      <%= f.submit "Resend confirmation instructions", class:"btn" %>
+    </div>
+  <% end %>
+
+  <div class="devse-shared-links">
+    <%= render "devise/shared/links" %>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Resend confirmation instructions" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>

@@ -63,7 +63,7 @@
 
   &:hover {
     background-color: $button-raised-background-hover;
-    color: $turqoise;
+    color: $turqoise!important;
     @extend .z-depth-1-half;
   }
 }
