@@ -56,4 +56,9 @@
   i{
     color:$mypurple;
   }
+  &:focus{
+    background: transparent;
+    box-shadow: none;
+    border: 0;
+  }
 }

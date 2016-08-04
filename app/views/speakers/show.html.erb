@@ -10,7 +10,12 @@
 <div class="row intro">
   <div class="avatar" style="background: url(<%= @speaker.avatar.url%>) center; background-size:cover">
   </div>
+
+<%if current_user.id == @speaker.id%>
   <h4 class="user-name">Hello <%= @speaker.name%></h4>
+<%else%>
+  <h4 class="user-name"><%= @speaker.name%></h4>
+<%end%>
   <h5 class="title">Enthusiastic Ironhacker</h5>
   <div class="social">
     <a class="btn btn-social-icon btn-twitter flat" href="https://twitter.com/<%= @speaker.twitter%>" target="_blank">

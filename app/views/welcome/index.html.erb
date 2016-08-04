@@ -11,10 +11,10 @@
      <%end%>
   </div>
 
-  <div class="row home-btn-nav">
+  <div class="home-btn-nav">
     <%= link_to 'My Profile', current_user, class: "btn btn-flat btn-secondary"%>
-    <%= link_to 'Presentations', agenda_index_path, class: "btn btn-flat btn-secondary"%>
+    <%= link_to 'Agenda', agenda_index_path, class: "btn btn-flat btn-secondary"%>
     <%= link_to 'Rate projects', projects_path, class: "btn btn-flat btn-secondary"%>
-    <%= link_to 'Search everything', new_user_registration_path, class: "btn btn-flat btn-secondary"%>
+    <%= link_to 'My Favorites', current_user_favorites_path(current_user.id), class: "btn btn-flat btn-secondary"%>
   </div>
 </div>

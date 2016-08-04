@@ -8,7 +8,11 @@
           <div class="screenshot" style="background:url(<%= project.avatar.url%>) center; background-size:cover; height:200px"></div>
         </div>
         <div class="card-content">
-          <span class="card-title activator grey-text text-darken-4"><%= project.name%><i class="material-icons right">poll</i></span>
+          <% if current_user.ratings.find_by(id: project.id) == nil%>
+            <span class="card-title activator grey-text text-darken-4"><%= project.name%><i class="material-icons right">star_border</i></span>
+          <%else%>
+          <span class="card-title activator grey-text text-darken-4"><%= project.name%><i class="material-icons right star-active">star</i></span>
+          <%end%>
 
           <p><%= project.description%></p>
         </div>

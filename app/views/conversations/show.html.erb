@@ -4,7 +4,13 @@
 
 <div>
   <div class="row conversation-header">
-    <%= @conversation.subject %>
+    Subject: <%= @conversation.subject %>
+  </div>
+  <div class="row mail-participants">
+    Participants:
+    <%@conversation.participants.each do |participant|%>
+      <span class="name-label"><%=participant.name%></span>
+    <%end%>
   </div>
     <div class="messages">
       <% @conversation.receipts_for(current_user).each do |receipt| %>
