@@ -14,6 +14,8 @@ gem "font-awesome-rails"
 gem 'bootstrap-will_paginate'
 gem 'will_paginate'
 gem "paperclip", "~> 5.0.0"
+gem 'aws-sdk', '~> 2.3'
+
 gem 'materialize-sass'
 gem 'acts-as-taggable-on', :git => 'https://github.com/mbleigh/acts-as-taggable-on'
 gem "mailboxer", github: 'mailboxer/mailboxer'
